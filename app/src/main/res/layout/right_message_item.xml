@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/time_stamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="32dp"
+        android:maxLines="1"
+        android:text="15/12/19 13:23"
+        android:textSize="13dp" />
+
+    <com.github.library.bubbleview.BubbleTextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:maxWidth="220dp"
+        android:padding="10dp"
+        android:text="8746238746328473847384763287623"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        app:angle="15dp"
+        app:arrowCenter="true"
+        app:arrowHeight="10dp"
+
+        app:arrowLocation="right"
+        app:arrowPosition="14dp"
+        app:arrowWidth="10dp"
+        app:bubbleColor="#0791FF" />
+
+</RelativeLayout>

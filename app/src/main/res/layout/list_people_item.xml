@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+
+    <RelativeLayout
+        android:id="@+id/panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_face_black_24dp"
+            app:riv_border_color="#333333"
+            app:riv_border_width="2dip"
+            app:riv_corner_radius="30dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"
+            app:riv_tile_mode="clamp" />
+
+        <TextView
+            android:id="@+id/friend_name"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="81dp"
+            android:layout_marginTop="2dp"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:text="Dinh vanh f"
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+
+        <TextView
+            android:id="@+id/friend_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="35dp"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:text="Dinhvanhf@gmasssssil.com"
+            android:textSize="15dp" />
+    </RelativeLayout>
+</RelativeLayout>

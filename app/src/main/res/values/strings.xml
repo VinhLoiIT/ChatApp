@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="conversations_fragment">Chat</string>
+    <string name="contacts_fragment">Contacts</string>
+    <string name="settings_fragment">Settings</string>
+    <string name="terms_privacy">Khi đăng ký tôi đã xem xét và đồng ý với Điều khoản sử dụng và Chính sách bảo mật của App.</string>
+    <string name="alert_leaving">Everything will be deleted after you leave !</string>
+    <string name="ok_i_know">Ok, I know</string>
+
+    //Message
+    <string name="signin_success">Sign-in Successfully</string>
+    <string name="signin_cancel">Sign-in Canceled</string>
+    <string name="signin_error">Sign-in Failed</string>
+    <string name="signup_success">Sign-up Successfully</string>
+    <string name="is_updating">Updating...</string>
+    <string name="profile_updated">Profile updated</string>
+
+    //Error
+    <string name="fullname_empty">Full Name cannot be blank</string>
+    <string name="email_empty">Email cannot be blank</string>
+    <string name="email_invalid">Invalid Email</string>
+    <string name="password_empty">Password cannot be blank</string>
+    <string name="password_length">"Password must be at least 6 characters long"</string>
+    <string name="retype_empty">Retype password cannot be blank</string>
+    <string name="retype_match">Retype and password do not match</string>
+    <string name="terms_confirm">Please read and confirm our Terms and Privacy</string>
+    <string name="mail_fail">Mail was not sent due to some problems.</string>
+
+    //SignIn/SignUp
+    <string name="remember_account">Remember Me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_retype_password">Re-enter password</string>
+    <string name="failed_login">Failed Login</string>
+    <string name="hint_name">Your Name</string>
+    <string name="hint_birthday">Your Birthday</string>
+
+    //Forgot Password
+    <string name="get_password">Please enter your email connected with the account you created. We\'ll send a link to reset your password. </string>
+    <string name="btn_send">SEND</string>
+    <string name="mail_sent">Mail has been sent. Please check your mail to recover password.</string>
+
+    //User's Information (Profile Detail's Tab)
+    <string name="user_fullname">Full Name</string>
+    <string name="user_email">Email</string>
+    <string name="user_balance">Balance</string>
+    <string name="user_birthday">Birthday</string>
+    <string name="user_format_birthday">dd/mm/yyyy</string>
+    <string name="user_gender">Gender</string>
+    <string name="user_gender_male">Male</string>
+    <string name="user_gender_female">Female</string>
+    <string name="user_gender_other">Other</string>
+    <string name="user_phonenumber">Phone Number</string>
+    <string name="user_address">Address</string>
+    <string name="btn_save">SAVE</string>
+    <string name="confirm_dialog_title">Confirm</string>
+    <string name="confirm_dialog_description">Do you want to save changes ?</string>
+    <string name="confirm_dialog_yes">YES</string>
+    <string name="confirm_dialog_cancel">CANCEL</string>
+</resources>

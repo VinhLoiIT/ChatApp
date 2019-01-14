@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "851749332015",
+    "firebase_url": "https://chat-app-v2-cfe23.firebaseio.com",
+    "project_id": "chat-app-v2-cfe23",
+    "storage_bucket": "chat-app-v2-cfe23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851749332015:android:5c0e96f4f621495d",
+        "android_client_info": {
+          "package_name": "com.app.truongnguyen.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851749332015-k2akvjorrsk6homjnq601dgdv1m8tano.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.truongnguyen.chatapp",
+            "certificate_hash": "ad8c7dbe4f6f43d86516e68f727b4de4053e9d4f"
+          }
+        },
+        {
+          "client_id": "851749332015-3hsqka3f0geo1c030u6n48vtufmht4bp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVC4JG9A5XD8Jrw1z82FuhHyKN665x3pU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851749332015-3hsqka3f0geo1c030u6n48vtufmht4bp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

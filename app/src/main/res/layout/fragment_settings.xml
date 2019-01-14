@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/chatToolbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/quitequite_while"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="Settings"
+        app:titleTextColor="#000" />
+
+    <LinearLayout
+        android:id="@+id/update_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_width="53dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/marginLeftInProfile"
+                android:src="@drawable/ic_update_info" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="Update Profile"
+                android:textSize="@dimen/textSizeInSettings" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="90dp"
+            android:background="@color/underline" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/change_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_width="53dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/marginLeftInProfile"
+                android:src="@drawable/ic_change_password" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="Change password"
+                android:textSize="@dimen/textSizeInSettings" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="90dp"
+            android:background="@color/underline" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_width="53dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/marginLeftInProfile"
+                android:src="@drawable/ic_login_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="Login history"
+                android:textSize="@dimen/textSizeInSettings" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="90dp"
+            android:background="@color/underline" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/about_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_width="53dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/marginLeftInProfile"
+                android:src="@drawable/ic_info_about_us" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="About us"
+                android:textSize="@dimen/textSizeInSettings" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="90dp"
+            android:background="@color/underline" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <ImageView
+                android:layout_width="53dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/marginLeftInProfile"
+                android:src="@drawable/ic_log_out" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="Logout"
+                android:textSize="@dimen/textSizeInSettings" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
