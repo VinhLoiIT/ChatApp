@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.MyPrefs;
 import com.app.truongnguyen.chatapp.main.MainActivity;
-import com.app.truongnguyen.chatapp.main.SettingsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -87,14 +86,17 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             case R.id.btn_login:
                 login();
                 break;
             case R.id.forgot_password:
+                intent = new Intent(SignIn.this, ForgotPassword.class);
+                startActivity(intent);
                 break;
             case R.id.link_to_signup:
-                Intent intent = new Intent(SignIn.this, SignUp.class);
+                intent = new Intent(SignIn.this, SignUp.class);
                 finish();
                 startActivity(intent);
                 break;

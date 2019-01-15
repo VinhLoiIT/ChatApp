@@ -80,5 +80,8 @@ dependencies {
     //process image
     implementation 'id.zelory:compressor:2.1.0'
 
+    //PhtoView
+    //implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

@@ -6,8 +6,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +27,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -30,7 +37,44 @@ import butterknife.ButterKnife;
 public class MyProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private final int PICK_IMAGE_REQUEST = 71;
     @BindView(R.id.avatar)
+    RoundedImageView mAvatar;
+
+    @BindView(R.id.edi_email)
+    TextInputLayout ediEmail;
+    @BindView(R.id.txt_email)
+    TextInputEditText txtEmail;
+
+    @BindView(R.id.txt_birthday)
+    TextView txtBirthday;
+
+    @BindView(R.id.rad_group_gender)
+    RadioGroup radGroupGender;
+    @BindView(R.id.rad_male)
+    RadioButton radMale;
+    @BindView(R.id.rad_female)
+    RadioButton radFemale;
+    @BindView(R.id.rad_other)
+    RadioButton radOther;
+
+    //Contact
+    @BindView(R.id.edi_phonenumber)
+    TextInputLayout ediPhoneNumber;
+    @BindView(R.id.txt_phonenumber)
+    TextInputEditText txtPhoneNumber;
+
+    @BindView(R.id.edi_address)
+    TextInputLayout ediAddress;
+    @BindView(R.id.txt_address)
+    TextInputEditText txtAddress;
+
+    //Button
+    @BindView(R.id.btn_save)
+    Button btnSave;
+
+    @BindView(R.id.avatar)
     RoundedImageView avatar;
+    @BindView(R.id.btn_change_avatar)
+    ImageView btnChangeAvatar;
     @BindView(R.id.tv_user_name)
     TextView tvName;
 
@@ -43,6 +87,7 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_my_profile);
         ButterKnife.bind(this);
 
+        btnChangeAvatar.setOnClickListener(this);
         avatar.setOnClickListener(this);
         tvName.setText(firebase.getUserData().getUserName());
         //firebase.setAvatarFor(avatar);
@@ -53,6 +98,21 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.avatar:
+                Intent intent = new Intent(MyProfileActivity.this, ViewImageActivity.class);
+                Bundle bundle = new Bundle();
+
+                Bitmap bitmap = firebase.getAvatar();
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                byte[] imageInByte = stream.toByteArray();
+                ByteArrayInputStream bis = new ByteArrayInputStream(imageInByte);
+
+                bundle.putByteArray("image", imageInByte);
+
+                intent.putExtras(bundle);
+                startActivity(intent);
+                break;
+            case R.id.btn_change_avatar:
                 chooseImage();
                 break;
         }

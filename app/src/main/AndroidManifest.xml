@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.app.truongnguyen.chatapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -28,6 +29,8 @@
         <activity android:name=".call.IncomingCallScreenActivity"/>
         <activity android:name=".main.MainActivity"></activity>
         <activity android:name=".main.MyProfileActivity"></activity>
+        <activity android:name=".inout.ForgotPassword"></activity>
+        <activity android:name=".main.ViewImageActivity"></activity>
     </application>
 
 </manifest>

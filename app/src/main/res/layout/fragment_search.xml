@@ -25,6 +25,7 @@
             android:src="@drawable/ic_keyboard_backspace_black_24dp" />
 
         <EditText
+            android:focusableInTouchMode="true"
             android:focusable="true"
             android:id="@+id/input_search"
             android:layout_width="match_parent"
@@ -36,7 +37,9 @@
             android:background="@drawable/underline"
             android:hint="Search"
             android:textColor="@color/colorBlack"
-            android:textColorHint="@color/dark_gray" />
+            android:textColorHint="@color/dark_gray">
+            <requestFocus />
+        </EditText>
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView

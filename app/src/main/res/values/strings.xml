@@ -6,6 +6,7 @@
     <string name="terms_privacy">Khi đăng ký tôi đã xem xét và đồng ý với Điều khoản sử dụng và Chính sách bảo mật của App.</string>
     <string name="alert_leaving">Everything will be deleted after you leave !</string>
     <string name="ok_i_know">Ok, I know</string>
+    <string name="guide_forgot_password">Please enter your email connected with the account you created. We\'ll send a link to reset your password. </string>
 
     //Message
     <string name="signin_success">Sign-in Successfully</string>

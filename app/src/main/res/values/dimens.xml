@@ -9,5 +9,7 @@
     <dimen name="marginTop">10dp</dimen>
     <dimen name="marginLeft">20dp</dimen>
     <dimen name="marginRight">20dp</dimen>
+    <dimen name="avatar_width">210dp</dimen>
+    <dimen name="avatar_height">210dp</dimen>
     <integer name="maxLengthEditTextInProfile">50</integer>
 </resources>

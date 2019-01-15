@@ -86,7 +86,7 @@ public class Firebase {
         userId = FirebaseAuth.getInstance().getUid();
 
         //getUserData
-        mDbs.collection("users").document(userId)
+        getUserCurrentFolderDbs()
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot snapshot,
@@ -114,7 +114,7 @@ public class Firebase {
     }
 
     public DocumentReference getUserCurrentFolderDbs() {
-        return FirebaseFirestore.getInstance().collection(USERS_FOLDER).document(userId);
+        return mDbs.collection(USERS_FOLDER).document(userId);
     }
 
     public void sendMess(String cvsId, String senderId, String content) {
@@ -422,18 +422,18 @@ public class Firebase {
     }
 
     public void getFriend() {
-        getUserCurrentFolderDbs().collection(LIST_FRIEND_FOLDER)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+        getUserCurrentFolderDbs()
+                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
-                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException e) {
                         if (e != null) {
                             Log.w("", "Listen failed.", e);
                             EventBus.getDefault().postSticky(new EmptyObjectEvent());
                             return;
                         }
 
-                        List<String> data = queryDocumentSnapshots.toObjects(String.class);
-                        data = mUser.getFriendList();
+                        mUser = value.toObject(User.class);
+                        ArrayList<String> data = mUser.getFriendList();
                         if (data != null && !data.isEmpty()) {
                             for (String id : data)
                                 mDbs.collection(USERS_FOLDER).document(id)

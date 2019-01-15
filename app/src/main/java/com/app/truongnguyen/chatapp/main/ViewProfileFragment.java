@@ -2,6 +2,7 @@ package com.app.truongnguyen.chatapp.main;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -19,6 +20,9 @@ import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FieldValue;
 import com.makeramen.roundedimageview.RoundedImageView;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -70,6 +74,7 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         setBtnAddFrienf(firebase.isFriend(hisId));
         btnToChat.setOnClickListener(this);
         btnAddFrienf.setOnClickListener(this);
+        avatar.setOnClickListener(this);
 
         if (hisAvatarBitnap != null)
             avatar.setImageBitmap(hisAvatarBitnap);
@@ -78,11 +83,30 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        Bundle bundle;
+
         switch (v.getId()) {
+            case R.id.avatar:
+                Intent intent = new Intent(getMainActivity(), ViewImageActivity.class);
+                bundle = new Bundle();
+
+                Bitmap bitmap = hisAvatarBitnap;
+                if (bitmap != null) {
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                    byte[] imageInByte = stream.toByteArray();
+                    ByteArrayInputStream bis = new ByteArrayInputStream(imageInByte);
+
+                    bundle.putByteArray("image", imageInByte);
+
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+                break;
             case R.id.btn_to_chat:
                 ChattingFragment chattingFragment = ChattingFragment.newInstance();
 
-                Bundle bundle = new Bundle();
+                bundle = new Bundle();
                 bundle.putString("otherId", hisId);
                 chattingFragment.setArguments(bundle);
                 ((MainActivity) mContext).presentFragment(chattingFragment);

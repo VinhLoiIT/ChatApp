@@ -21,11 +21,8 @@ import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
@@ -66,6 +63,8 @@ public class SearchFragment extends SupportFragment {
         ButterKnife.bind(this, view);
 
         mcContext = getMainActivity();
+
+        input.requestFocus();
 
         peopleList = new ArrayList<>();
         resultList = new ArrayList<>();

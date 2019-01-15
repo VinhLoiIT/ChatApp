@@ -119,7 +119,7 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
 
         if (stickyEvent != null) {
             if (userInfoArrayList.isEmpty())
-                userInfoArrayList.add(stickyEvent);
+            userInfoArrayList.add(stickyEvent);
             else {
                 boolean same = false;
                 for (UserInfo c : this.userInfoArrayList)
@@ -141,7 +141,7 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
                     return t1.compareTo(t2);
                 }
             });
-            // Log.d("1234567", "sizeArray: " + conversationArrayList.size() + "getConversationEvent: " + stickyEvent.toString());
+
             mAdapter.notifyDataSetChanged();
 
             if (swipeLayout.isRefreshing())
@@ -166,7 +166,6 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
             case R.id.avatar:
                 Intent intent = new Intent(getMainActivity(), MyProfileActivity.class);
                 getMainActivity().startActivity(intent);
-                //getMainActivity().presentFragment(MyProfileFragment.newInstance());
                 break;
         }
     }

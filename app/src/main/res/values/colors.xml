@@ -11,7 +11,7 @@
     <color name="quitequite_while">#F2F2F2</color>
     <color name="white">#FFF</color>
     <color name="underline">#424046</color>
-
+    <color name="q_while">#F7F7F7</color>
     <color name="a_white">#F5F5F5</color>
     <item name="FlatWhite" type="color">#F5F5F5</item>
     <color name="focus_color">#FF0B19</color>
