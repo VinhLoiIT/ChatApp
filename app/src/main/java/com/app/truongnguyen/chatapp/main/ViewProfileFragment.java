@@ -2,6 +2,8 @@ package com.app.truongnguyen.chatapp.main;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.app.truongnguyen.chatapp.MainActivity;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
@@ -35,6 +36,8 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
     private Context mContext;
     private String hisId;
     private String hisName;
+    private Bitmap hisAvatarBitnap = null;
+
     private Firebase firebase = Firebase.getInstance();
 
     public static ViewProfileFragment newInstance() {
@@ -56,6 +59,10 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         if (bundle != null) {
             hisId = bundle.getString("id");
             hisName = bundle.getString("hisName");
+
+            byte[] byteArray = bundle.getByteArray("hisAvatarBitmap");
+            if (byteArray != null)
+                hisAvatarBitnap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         }
 
         mContext = getMainActivity();
@@ -64,6 +71,8 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         btnToChat.setOnClickListener(this);
         btnAddFrienf.setOnClickListener(this);
 
+        if (hisAvatarBitnap != null)
+            avatar.setImageBitmap(hisAvatarBitnap);
         tvName.setText(hisName);
     }
 

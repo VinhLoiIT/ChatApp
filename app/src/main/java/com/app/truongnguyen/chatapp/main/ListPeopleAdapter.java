@@ -1,8 +1,8 @@
-package com.app.truongnguyen.chatapp.search_fragment;
-
+package com.app.truongnguyen.chatapp.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,14 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.app.truongnguyen.chatapp.MainActivity;
-import com.app.truongnguyen.chatapp.MyProfileActivity;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
-import com.app.truongnguyen.chatapp.main.ViewProfileFragment;
 import com.makeramen.roundedimageview.RoundedImageView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class ListPeopleAdapter extends RecyclerView.Adapter<ListPeopleAdapter.ViewHolder> {
@@ -57,6 +55,7 @@ public class ListPeopleAdapter extends RecyclerView.Adapter<ListPeopleAdapter.Vi
 
         public String id;
         public String hisName;
+        public Bitmap avatarBitmap = null;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -73,6 +72,15 @@ public class ListPeopleAdapter extends RecyclerView.Adapter<ListPeopleAdapter.Vi
                         Bundle bundle = new Bundle();
                         bundle.putString("id", id);
                         bundle.putString("hisName", hisName);
+
+                        if (avatarBitmap != null) {
+                            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                            avatarBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                            byte[] byteArray = stream.toByteArray();
+
+                            bundle.putByteArray("hisAvatarBitmap", byteArray);
+                        }
+
                         viewProfileFragment.setArguments(bundle);
                         ((MainActivity) context).presentFragment(viewProfileFragment);
                     } else {
@@ -86,9 +94,11 @@ public class ListPeopleAdapter extends RecyclerView.Adapter<ListPeopleAdapter.Vi
         public void onBind(UserInfo u) {
             this.name.setText(u.getUserName());
             this.email.setText(u.getEmail());
-            if (u.getAvatarUri() != null)
-                this.avatar.setImageBitmap(u.getAvatarBitmap());
-            
+            if (u.getAvatarUri() != null) {
+                this.avatarBitmap = u.getAvatarBitmap();
+                this.avatar.setImageBitmap(avatarBitmap);
+            }
+
             this.id = u.getId();
             this.hisName = u.getUserName();
         }

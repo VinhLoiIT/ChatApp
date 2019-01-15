@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.truongnguyen.chatapp.MainActivity;
+import com.app.truongnguyen.chatapp.main.MainActivity;
 
 import java.lang.ref.WeakReference;
 

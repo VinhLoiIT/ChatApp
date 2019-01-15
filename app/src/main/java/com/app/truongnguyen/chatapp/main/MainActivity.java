@@ -1,4 +1,4 @@
-package com.app.truongnguyen.chatapp;
+package com.app.truongnguyen.chatapp.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,11 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import com.app.truongnguyen.chatapp.PagerAdapter;
+import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.FragmentNavigationController;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.PresentStyle;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
-import com.app.truongnguyen.chatapp.main.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -117,3 +118,11 @@ public class MainActivity extends AppCompatActivity {
         restartHomeScreen();
     }
 }
+
+
+
+
+
+
+
+

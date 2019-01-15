@@ -17,12 +17,10 @@ import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.EventClass.EmptyObjectEvent;
 import com.app.truongnguyen.chatapp.EventClass.Signal;
-import com.app.truongnguyen.chatapp.MyProfileActivity;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
-import com.app.truongnguyen.chatapp.search_fragment.SearchFragment;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.greenrobot.eventbus.EventBus;

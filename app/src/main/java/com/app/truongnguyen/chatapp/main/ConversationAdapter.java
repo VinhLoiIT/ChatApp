@@ -1,6 +1,7 @@
 package com.app.truongnguyen.chatapp.main;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.Common;
-import com.app.truongnguyen.chatapp.MainActivity;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
@@ -71,8 +72,12 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
         TextView messContent;
         @BindView(R.id.last_message_time)
         TextView messTime;
+        @BindView(R.id.cvs_avatar)
+        RoundedImageView icon;
+
         private String cvsId;
         private String hisName;
+        private Bitmap iconBitmap = null;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
@@ -95,6 +100,10 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
         public void bind(Conversation cvs) {
             this.cvsId = cvs.getId();
             this.hisName = cvs.getConversationName();
+            iconBitmap = cvs.getIcon();
+
+            if (iconBitmap != null)
+                icon.setImageBitmap(iconBitmap);
 
             String sender = "";
             if (Firebase.getInstance().getUid().equals(cvs.getLastMessage().getSender()))

@@ -18,11 +18,11 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.truongnguyen.chatapp.MainActivity;
 import com.app.truongnguyen.chatapp.R;
-import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.MyPrefs;
 import com.app.truongnguyen.chatapp.data.User;
+import com.app.truongnguyen.chatapp.main.MainActivity;
+import com.app.truongnguyen.chatapp.main.SettingsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

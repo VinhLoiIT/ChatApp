@@ -1,4 +1,4 @@
-package com.app.truongnguyen.chatapp;
+package com.app.truongnguyen.chatapp.main;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.EventClass.Signal;
+import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.widget.BitmapCustom;
 import com.makeramen.roundedimageview.RoundedImageView;
