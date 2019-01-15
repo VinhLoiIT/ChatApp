@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
 
 public class Firebase {
     private static Firebase instance = null;
-    final public long MAX_DONWLOAD_SIZE_BYTES = 100000000;
+    final public static long MAX_DONWLOAD_SIZE_BYTES = 10000000;
     private FirebaseFirestore mDbs = null;
     private FirebaseStorage storage;
     private User mUser;
@@ -228,14 +228,32 @@ public class Firebase {
 
                                                         String otherId = getOtherIdFromCvsId(c.getId());
 
-                                                        //Get user name
+                                                        //Get user name and icon (his avatar)
                                                         mDbs.collection("users").document(otherId).get()
                                                                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                                                     @Override
                                                                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                                                                         if (documentSnapshot.exists()) {
-                                                                            c.setConversationName(documentSnapshot.toObject(UserInfo.class).getUserName());
+
+                                                                            UserInfo u = documentSnapshot.toObject(UserInfo.class);
+                                                                            c.setConversationName(u.getUserName());
                                                                             EventBus.getDefault().postSticky(c);
+
+                                                                            //Download avatar
+                                                                            if (u.getAvatarUri() != null) {
+                                                                                storage.getReference().child(u.getAvatarUri()).getBytes(MAX_DONWLOAD_SIZE_BYTES)
+                                                                                        .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                                                                            @Override
+                                                                                            public void onSuccess(byte[] bytes) {
+                                                                                                ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
+                                                                                                Bitmap b = BitmapFactory.decodeStream(arrayInputStream);
+
+                                                                                                c.setIcon(b);
+
+                                                                                                EventBus.getDefault().postSticky(c);
+                                                                                            }
+                                                                                        });
+                                                                            }
                                                                         }
                                                                     }
                                                                 });

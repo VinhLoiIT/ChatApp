@@ -22,8 +22,8 @@
         </activity>
 
         <activity android:name=".inout.SignUp"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".MyProfileActivity"></activity>
+        <activity android:name=".main.SettingsFragment$MainActivity"></activity>
+        <activity android:name=".main.SettingsFragment$MyProfileActivity"></activity>
     </application>
 
 </manifest>

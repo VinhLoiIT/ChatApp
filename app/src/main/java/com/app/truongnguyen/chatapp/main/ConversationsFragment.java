@@ -17,12 +17,10 @@ import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.EventClass.EmptyObjectEvent;
 import com.app.truongnguyen.chatapp.EventClass.Signal;
-import com.app.truongnguyen.chatapp.MyProfileActivity;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
-import com.app.truongnguyen.chatapp.search_fragment.SearchFragment;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -166,11 +164,11 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.search_bar:
-                getMainActivity().presentFragment(SearchFragment.newInstance());
+                getMainActivity().presentFragment(SettingsFragment.SearchFragment.newInstance());
 
                 break;
             case R.id.avatar:
-                Intent intent = new Intent(getMainActivity(), MyProfileActivity.class);
+                Intent intent = new Intent(getMainActivity(), SettingsFragment.MyProfileActivity.class);
                 getMainActivity().startActivity(intent);
                 //getMainActivity().presentFragment(MyProfileFragment.newInstance());
                 break;

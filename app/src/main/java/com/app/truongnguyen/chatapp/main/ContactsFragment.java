@@ -17,13 +17,10 @@ import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.EventClass.EmptyObjectEvent;
 import com.app.truongnguyen.chatapp.EventClass.Signal;
-import com.app.truongnguyen.chatapp.MyProfileActivity;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
-import com.app.truongnguyen.chatapp.search_fragment.ListPeopleAdapter;
-import com.app.truongnguyen.chatapp.search_fragment.SearchFragment;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -49,7 +46,7 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
     @BindView(R.id.list_of_friend)
     RecyclerView mRecyclerView;
 
-    private ListPeopleAdapter mAdapter;
+    private SettingsFragment.ListPeopleAdapter mAdapter;
     private Context mContext;
     private ArrayList<UserInfo> userInfoArrayList;
     private Firebase firebase = Firebase.getInstance();
@@ -79,7 +76,7 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
         userInfoArrayList = new ArrayList<>();
-        mAdapter = new ListPeopleAdapter(getActivity(), userInfoArrayList);
+        mAdapter = new SettingsFragment.ListPeopleAdapter(getActivity(), userInfoArrayList);
         mRecyclerView.setAdapter(mAdapter);
         swipeLayout.setOnRefreshListener(this::refreshData);
 
@@ -163,11 +160,11 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.search_bar:
-                getMainActivity().presentFragment(SearchFragment.newInstance());
+                getMainActivity().presentFragment(SettingsFragment.SearchFragment.newInstance());
 
                 break;
             case R.id.avatar:
-                Intent intent = new Intent(getMainActivity(), MyProfileActivity.class);
+                Intent intent = new Intent(getMainActivity(), SettingsFragment.MyProfileActivity.class);
                 getMainActivity().startActivity(intent);
                 //getMainActivity().presentFragment(MyProfileFragment.newInstance());
                 break;

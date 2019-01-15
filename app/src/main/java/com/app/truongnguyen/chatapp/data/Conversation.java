@@ -1,5 +1,7 @@
 package com.app.truongnguyen.chatapp.data;
 
+import android.graphics.Bitmap;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,6 +16,19 @@ public class Conversation {
     @SerializedName("id")
     @Expose
     private String id;
+
+    @SerializedName("icon")
+    @Expose
+    private Bitmap icon;
+
+    public Bitmap getIcon() {
+
+        return icon;
+    }
+
+    public void setIcon(Bitmap icon) {
+        this.icon = icon;
+    }
 
     @SerializedName("seen")
     @Expose
