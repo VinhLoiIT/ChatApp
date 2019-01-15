@@ -1,0 +1,23 @@
+#Internal package file, do not edit.
+#Tue Jan 15 11:20:13 ICT 2019
+2.base=/home/hoailuong/Desktop/ChatApp/app/build/intermediates/transforms/dexMerger/debug/1
+0.path=lib/x86/libsinch-android-rtc.so
+2.baseType=DIRECTORY
+3.base=/home/hoailuong/Desktop/ChatApp/app/build/intermediates/transforms/dexMerger/debug/1
+2.set=DEX
+1.path=lib/armeabi-v7a/libsinch-android-rtc.so
+4.base=/home/hoailuong/Desktop/ChatApp/app/build/intermediates/transforms/dexMerger/debug/0
+count=5
+2.path=classes.dex
+4.set=DEX
+3.path=classes2.dex
+3.baseType=DIRECTORY
+1.set=NATIVE_RESOURCE
+4.path=classes.dex
+1.baseType=DIRECTORY
+0.base=/home/hoailuong/Desktop/ChatApp/app/build/intermediates/transforms/mergeJniLibs/debug/0
+0.baseType=DIRECTORY
+3.set=DEX
+1.base=/home/hoailuong/Desktop/ChatApp/app/build/intermediates/transforms/mergeJniLibs/debug/0
+4.baseType=DIRECTORY
+0.set=NATIVE_RESOURCE

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme"
         android:windowSoftInputMode="stateHidden">
+
+        <service android:name=".call.SinchService" />
+
         <activity android:name=".inout.SignIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +27,8 @@
         <activity android:name=".inout.SignUp"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".MyProfileActivity"></activity>
+        <activity android:name=".call.CallScreenActivity"/>
+        <activity android:name=".call.IncomingCallScreenActivity"/>
     </application>
 
 </manifest>
