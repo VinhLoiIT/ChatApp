@@ -86,7 +86,8 @@ public class ListPeopleAdapter extends RecyclerView.Adapter<ListPeopleAdapter.Vi
         public void onBind(UserInfo u) {
             this.name.setText(u.getUserName());
             this.email.setText(u.getEmail());
-            this.avatar.setImageBitmap(u.getAvatarBitmap());
+            if (u.getAvatarUri() != null)
+                this.avatar.setImageBitmap(u.getAvatarBitmap());
             
             this.id = u.getId();
             this.hisName = u.getUserName();

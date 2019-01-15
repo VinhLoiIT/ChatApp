@@ -1,5 +1,6 @@
 package com.app.truongnguyen.chatapp.main;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,6 +15,8 @@ import com.app.truongnguyen.chatapp.MainActivity;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FieldValue;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.BindView;
@@ -30,7 +33,7 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
     Button btnToChat;
 
     private Context mContext;
-    private String uId;
+    private String hisId;
     private String hisName;
     private Firebase firebase = Firebase.getInstance();
 
@@ -51,13 +54,13 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            uId = bundle.getString("id");
+            hisId = bundle.getString("id");
             hisName = bundle.getString("hisName");
         }
 
         mContext = getMainActivity();
 
-        setBtnAddFrienf(firebase.isFriend(uId));
+        setBtnAddFrienf(firebase.isFriend(hisId));
         btnToChat.setOnClickListener(this);
         btnAddFrienf.setOnClickListener(this);
 
@@ -71,11 +74,56 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
                 ChattingFragment chattingFragment = ChattingFragment.newInstance();
 
                 Bundle bundle = new Bundle();
-                bundle.putString("otherId", uId);
+                bundle.putString("otherId", hisId);
                 chattingFragment.setArguments(bundle);
                 ((MainActivity) mContext).presentFragment(chattingFragment);
                 break;
             case R.id.btn_addfriend:
+                String listFriendFolder = Firebase.LIST_FRIEND_FOLDER;
+
+                ProgressDialog progressDialog = new ProgressDialog(getMainActivity());
+                progressDialog.setTitle("Waiting...");
+                progressDialog.setCanceledOnTouchOutside(true);
+                progressDialog.show();
+
+                if (!firebase.isFriend(hisId)) {
+                    firebase.getUserCurrentFolderDbs().update(listFriendFolder, FieldValue.arrayUnion(hisId))
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    firebase.getUserFolderDbs().document(hisId)
+                                            .update(listFriendFolder, FieldValue.arrayUnion(firebase.getUid()))
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    setBtnAddFrienf(true);
+                                                    progressDialog.dismiss();
+                                                }
+                                            });
+
+                                }
+                            });
+
+                } else {
+                    firebase.getUserFolderDbs().document(hisId)
+                            .update(listFriendFolder, FieldValue.arrayRemove(firebase.getUid()))
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    firebase.getUserCurrentFolderDbs()
+                                            .update(listFriendFolder, FieldValue.arrayRemove(hisId))
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    setBtnAddFrienf(false);
+                                                    progressDialog.dismiss();
+                                                }
+                                            });
+                                }
+                            });
+                }
+
                 break;
         }
     }

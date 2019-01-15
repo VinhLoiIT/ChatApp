@@ -77,5 +77,8 @@ dependencies {
     //video call
     implementation files('libs/sinch-android-rtc-3.8.0-VIDEO-SNAPSHOT.jar')
 
+    //process image
+    implementation 'id.zelory:compressor:2.1.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

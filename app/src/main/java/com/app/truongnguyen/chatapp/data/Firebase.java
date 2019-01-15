@@ -48,6 +48,8 @@ public class Firebase {
     private String userId;
     private Uri filePath;
     private Bitmap avatar;
+    static final public String LIST_FRIEND_FOLDER = "friendList";
+    static final public String USERS_FOLDER = "users";
 
     private Firebase() {
         initData();
@@ -108,11 +110,11 @@ public class Firebase {
     }
 
     public CollectionReference getUserFolderDbs() {
-        return FirebaseFirestore.getInstance().collection("users");
+        return FirebaseFirestore.getInstance().collection(USERS_FOLDER);
     }
 
     public DocumentReference getUserCurrentFolderDbs() {
-        return FirebaseFirestore.getInstance().collection("users").document(userId);
+        return FirebaseFirestore.getInstance().collection(USERS_FOLDER).document(userId);
     }
 
     public void sendMess(String cvsId, String senderId, String content) {
@@ -197,7 +199,7 @@ public class Firebase {
     }
 
     public void getConversation() {
-        mDbs.collection("users").document(userId)
+        getUserCurrentFolderDbs()
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot snapshot,
@@ -323,7 +325,7 @@ public class Firebase {
     }
 
     public void uploadAvatar(Bitmap bitmap, Context context) {
-        String destPath = userId + "/avatar";
+        String destPath = userId + "/avatar" + ".jpeg";
         if (bitmap != null) {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -402,7 +404,7 @@ public class Firebase {
     }
 
     public void getFriend() {
-        mDbs.collection("users").document().collection("friendList")
+        getUserCurrentFolderDbs().collection(LIST_FRIEND_FOLDER)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -412,34 +414,42 @@ public class Firebase {
                             return;
                         }
 
-                        List<UserInfo> data = queryDocumentSnapshots.toObjects(UserInfo.class);
+                        List<String> data = queryDocumentSnapshots.toObjects(String.class);
+                        data = mUser.getFriendList();
                         if (data != null && !data.isEmpty()) {
-                            for (UserInfo u : data)
-                                if (u.getAvatarUri() != null) {
-
-                                    //Download avatar
-                                    storage.getReference().child(u.getAvatarUri()).getBytes(MAX_DONWLOAD_SIZE_BYTES)
-                                            .addOnSuccessListener(new OnSuccessListener<byte[]>() {
-                                                @Override
-                                                public void onSuccess(byte[] bytes) {
-                                                    ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
-                                                    Bitmap b = BitmapFactory.decodeStream(arrayInputStream);
-
-                                                    u.setAvatarBitmap(b);
-
-                                                    EventBus.getDefault().postSticky(u);
+                            for (String id : data)
+                                mDbs.collection(USERS_FOLDER).document(id)
+                                        .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                                                if (e != null) {
+                                                    Log.w("", "Listen failed.", e);
+                                                    EventBus.getDefault().postSticky(new EmptyObjectEvent());
+                                                    return;
                                                 }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d("1234567", "onFailure: ");
-                                        }
-                                    });
 
+                                                UserInfo u = documentSnapshot.toObject(UserInfo.class);
 
-                                } else {
-                                    EventBus.getDefault().postSticky(u);
-                                }
+                                                EventBus.getDefault().postSticky(u);
+
+                                                //Download avatar
+                                                if (u.getAvatarUri() != null) {
+                                                    storage.getReference().child(u.getAvatarUri()).getBytes(MAX_DONWLOAD_SIZE_BYTES)
+                                                            .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                                                @Override
+                                                                public void onSuccess(byte[] bytes) {
+                                                                    ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
+                                                                    Bitmap b = BitmapFactory.decodeStream(arrayInputStream);
+
+                                                                    u.setAvatarBitmap(b);
+
+                                                                    EventBus.getDefault().postSticky(u);
+                                                                }
+                                                            });
+                                                }
+                                            }
+                                        });
+
                         } else {
                             EventBus.getDefault().postSticky(new EmptyObjectEvent());
                         }

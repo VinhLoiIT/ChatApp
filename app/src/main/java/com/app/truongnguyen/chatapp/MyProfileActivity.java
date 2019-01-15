@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.EventClass.Signal;
 import com.app.truongnguyen.chatapp.data.Firebase;
@@ -19,6 +20,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import butterknife.BindView;
@@ -32,7 +34,6 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
     TextView tvName;
 
     private Uri filePath;
-    private Bitmap image;
     private Firebase firebase = Firebase.getInstance();
 
     @Override
@@ -81,14 +82,23 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
                 && data != null && data.getData() != null) {
             filePath = data.getData();
             try {
-                image = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                Bitmap image = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                //image = ImageUtils.getInstant().getCompressedBitmap(filePath.toString());
+                //Bitmap bitmap = BitmapCustom.myScaleAndCrop(image, 128, 128);
+                if (image != null) {
+                    image = BitmapCustom.myScaleAndCrop(image, 256, 256);
+
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    image.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+
+                    uploadAvatar(image);
+                } else Toast.makeText(this, "Wooo...\n" +
+                        "Error when loading this image!!", Toast.LENGTH_SHORT).show();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            Bitmap bitmap = BitmapCustom.myScaleAndCrop(image, 128, 128);
-
-            uploadAvatar(bitmap);
         }
     }
 

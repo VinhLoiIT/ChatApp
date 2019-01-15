@@ -34,17 +34,17 @@ public class User {
     @SerializedName("conversationsId")
     @Expose
     private ArrayList<String> conversationsId = null;
-    @SerializedName("friendList")
+    @SerializedName(Firebase.LIST_FRIEND_FOLDER)
     @Expose
     private ArrayList<String> friendList = null;
+
+    public void setFriendList(ArrayList<String> friendList) {
+        this.friendList = friendList;
+    }
 
     public ArrayList<String> getFriendList() {
 
         return friendList;
-    }
-
-    public void setFriendList(ArrayList<String> friendList) {
-        this.friendList = friendList;
     }
 
     public String getAddress() {

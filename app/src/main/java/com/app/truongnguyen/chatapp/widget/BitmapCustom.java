@@ -6,11 +6,11 @@ import android.graphics.Matrix;
 public class BitmapCustom {
 
     static public Bitmap myScaleAndCrop(Bitmap bitmap, int maxHeight, int maxWidth) {
-        Bitmap temp = myCrop(bitmap);
+        Bitmap temp = cropIntoSquares(bitmap);
         return scale(temp, maxHeight, maxWidth);
     }
 
-    static public Bitmap myCrop(Bitmap bitmap) {
+    static public Bitmap cropIntoSquares(Bitmap bitmap) {
 
         Bitmap croped;
         float scale = 1;
