@@ -46,7 +46,7 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
     @BindView(R.id.list_of_friend)
     RecyclerView mRecyclerView;
 
-    private SettingsFragment.ListPeopleAdapter mAdapter;
+    private ListPeopleAdapter mAdapter;
     private Context mContext;
     private ArrayList<UserInfo> userInfoArrayList;
     private Firebase firebase = Firebase.getInstance();
@@ -76,7 +76,7 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
         userInfoArrayList = new ArrayList<>();
-        mAdapter = new SettingsFragment.ListPeopleAdapter(getActivity(), userInfoArrayList);
+        mAdapter = new ListPeopleAdapter(getActivity(), userInfoArrayList);
         mRecyclerView.setAdapter(mAdapter);
         swipeLayout.setOnRefreshListener(this::refreshData);
 
@@ -160,11 +160,11 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.search_bar:
-                getMainActivity().presentFragment(SettingsFragment.SearchFragment.newInstance());
+                getMainActivity().presentFragment(SearchFragment.newInstance());
 
                 break;
             case R.id.avatar:
-                Intent intent = new Intent(getMainActivity(), SettingsFragment.MyProfileActivity.class);
+                Intent intent = new Intent(getMainActivity(), MyProfileActivity.class);
                 getMainActivity().startActivity(intent);
                 //getMainActivity().presentFragment(MyProfileFragment.newInstance());
                 break;

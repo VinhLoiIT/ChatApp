@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.MyPrefs;
 import com.app.truongnguyen.chatapp.data.User;
+import com.app.truongnguyen.chatapp.main.MainActivity;
 import com.app.truongnguyen.chatapp.main.SettingsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -163,7 +164,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
                 Toast.makeText(SignUp.this, R.string.signup_success, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(SignUp.this, SettingsFragment.MainActivity.class);
+                Intent intent = new Intent(SignUp.this, MainActivity.class);
                 finish();
                 startActivity(intent);
             }

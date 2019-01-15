@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.MyPrefs;
+import com.app.truongnguyen.chatapp.main.MainActivity;
 import com.app.truongnguyen.chatapp.main.SettingsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -191,7 +192,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void signInSuccessful() {
-        Intent intent = new Intent(SignIn.this, SettingsFragment.MainActivity.class);
+        Intent intent = new Intent(SignIn.this, MainActivity.class);
         startActivity(intent);
         finish();
     }

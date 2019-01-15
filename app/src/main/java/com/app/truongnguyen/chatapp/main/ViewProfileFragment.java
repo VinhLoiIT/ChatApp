@@ -85,7 +85,7 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
                 Bundle bundle = new Bundle();
                 bundle.putString("otherId", hisId);
                 chattingFragment.setArguments(bundle);
-                ((SettingsFragment.MainActivity) mContext).presentFragment(chattingFragment);
+                ((MainActivity) mContext).presentFragment(chattingFragment);
                 break;
             case R.id.btn_addfriend:
                 String listFriendFolder = Firebase.LIST_FRIEND_FOLDER;

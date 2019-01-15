@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.truongnguyen.chatapp.main.SettingsFragment;
+import com.app.truongnguyen.chatapp.main.MainActivity;
 
 import java.lang.ref.WeakReference;
 
@@ -37,8 +37,8 @@ public abstract class SupportFragment extends Fragment {
         weakFragmentNaviagationController = new WeakReference<>(fragmentNavigationController);
     }
 
-    public SettingsFragment.MainActivity getMainActivity() {
-        return (SettingsFragment.MainActivity) getActivity();
+    public MainActivity getMainActivity() {
+        return (MainActivity) getActivity();
     }
 
 

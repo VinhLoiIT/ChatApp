@@ -92,7 +92,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
                     bundle.putString("cvsId", cvsId);
                     bundle.putString("hisName", hisName);
                     chattingFragment.setArguments(bundle);
-                    ((SettingsFragment.MainActivity) mContext).presentFragment(chattingFragment);
+                    ((MainActivity) mContext).presentFragment(chattingFragment);
                 }
             });
         }

@@ -164,11 +164,11 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.search_bar:
-                getMainActivity().presentFragment(SettingsFragment.SearchFragment.newInstance());
+                getMainActivity().presentFragment(SearchFragment.newInstance());
 
                 break;
             case R.id.avatar:
-                Intent intent = new Intent(getMainActivity(), SettingsFragment.MyProfileActivity.class);
+                Intent intent = new Intent(getMainActivity(), MyProfileActivity.class);
                 getMainActivity().startActivity(intent);
                 //getMainActivity().presentFragment(MyProfileFragment.newInstance());
                 break;
