@@ -833,6 +833,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color q_while
 color quite_dark
 color quite_gray
 color quite_green
@@ -937,6 +938,8 @@ dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen avatar_height
+dimen avatar_width
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -1177,6 +1180,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable background_color
 drawable btn_login
+drawable btn_read
 drawable button_green_cornor
 drawable button_red_cornor
 drawable common_full_open_on_phone
@@ -2591,6 +2595,9 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_action_keyboard
 drawable ic_action_send_now
+drawable ic_arrow_back_white_24dp
+drawable ic_back_button
+drawable ic_camera_alt_black_24dp
 drawable ic_change_password
 drawable ic_chat_black_24dp
 drawable ic_contact_black_24dp
@@ -2725,7 +2732,10 @@ id bottom
 id bottomPanel
 id btn_addfriend
 id btn_back
+id btn_change_avatar
 id btn_login
+id btn_save
+id btn_send
 id btn_send_mess
 id btn_signup
 id btn_to_chat
@@ -2769,10 +2779,12 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id edi_address
 id edi_birthday
 id edi_email
 id edi_name
 id edi_password
+id edi_phonenumber
 id edi_retype_password
 id edit_query
 id emoji_button
@@ -2875,6 +2887,10 @@ id percent
 id pin
 id progress_circular
 id progress_horizontal
+id rad_female
+id rad_group_gender
+id rad_male
+id rad_other
 id radio
 id remoteUser
 id remoteVideo
@@ -2956,6 +2972,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tv_user_name
+id txt_address
+id txt_birthday
+id txt_email
+id txt_phonenumber
 id txt_terms_privacy
 id uniform
 id unlabeled
@@ -3019,9 +3039,11 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_call_screen
+layout activity_forgot_password
 layout activity_incoming_call_screen
 layout activity_main
 layout activity_my_profile
+layout activity_view_image
 layout alert_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3164,6 +3186,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string guide_forgot_password
 string hide_bottom_view_on_scroll_behavior
 string hint_birthday
 string hint_email

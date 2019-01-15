@@ -23,6 +23,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/MyAppTheme"
         android:windowSoftInputMode="stateHidden" >
         <service android:name="com.app.truongnguyen.chatapp.call.SinchService" />
@@ -35,10 +36,12 @@
             </intent-filter>
         </activity>
         <activity android:name="com.app.truongnguyen.chatapp.inout.SignUp" />
-        <activity android:name="com.app.truongnguyen.chatapp.MainActivity" />
-        <activity android:name="com.app.truongnguyen.chatapp.MyProfileActivity" />
         <activity android:name="com.app.truongnguyen.chatapp.call.CallScreenActivity" />
         <activity android:name="com.app.truongnguyen.chatapp.call.IncomingCallScreenActivity" />
+        <activity android:name="com.app.truongnguyen.chatapp.main.MainActivity" />
+        <activity android:name="com.app.truongnguyen.chatapp.main.MyProfileActivity" />
+        <activity android:name="com.app.truongnguyen.chatapp.inout.ForgotPassword" />
+        <activity android:name="com.app.truongnguyen.chatapp.main.ViewImageActivity" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

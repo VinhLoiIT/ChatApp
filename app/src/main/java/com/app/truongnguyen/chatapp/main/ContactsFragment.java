@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.EventClass.EmptyObjectEvent;
 import com.app.truongnguyen.chatapp.EventClass.Signal;
+import com.app.truongnguyen.chatapp.EventClass.UserInfoListEvent;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
@@ -28,8 +29,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -114,35 +113,37 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
     }
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void getFriendInfo(UserInfo data) {
-        UserInfo stickyEvent = EventBus.getDefault().removeStickyEvent(UserInfo.class);
+    public void getFriendInfo(UserInfoListEvent data) {
+        UserInfoListEvent stickyEvent = EventBus.getDefault().removeStickyEvent(UserInfoListEvent.class);
 
-        if (stickyEvent != null) {
-            if (userInfoArrayList.isEmpty())
-            userInfoArrayList.add(stickyEvent);
-            else {
-                boolean same = false;
-                for (UserInfo c : this.userInfoArrayList)
-                    if (c.getId().equals(stickyEvent.getId())) {
-                        userInfoArrayList.remove(c);
-                        userInfoArrayList.add(stickyEvent);
-                        same = true;
-                        break;
-                    }
-                if (!same)
-                    userInfoArrayList.add(stickyEvent);
-            }
-
-            Collections.sort(userInfoArrayList, new Comparator<UserInfo>() {
-                @Override
-                public int compare(UserInfo o2, UserInfo o1) {
-                    String t1 = o1.getUserName();
-                    String t2 = o2.getUserName();
-                    return t1.compareTo(t2);
-                }
-            });
-
-            mAdapter.notifyDataSetChanged();
+        if (stickyEvent.getUserInfoArrayList() != null) {
+            userInfoArrayList.clear();
+            userInfoArrayList.addAll(stickyEvent.getUserInfoArrayList());
+//            if (userInfoArrayList.isEmpty())
+//            userInfoArrayList.add(stickyEvent);
+//            else {
+//                boolean same = false;
+//                for (UserInfo c : this.userInfoArrayList)
+//                    if (c.getId().equals(stickyEvent.getId())) {
+//                        userInfoArrayList.remove(c);
+//                        userInfoArrayList.add(stickyEvent);
+//                        same = true;
+//                        break;
+//                    }
+//                if (!same)
+//                    userInfoArrayList.add(stickyEvent);
+//            }
+//
+//            Collections.sort(userInfoArrayList, new Comparator<UserInfo>() {
+//                @Override
+//                public int compare(UserInfo o2, UserInfo o1) {
+//                    String t1 = o1.getUserName();
+//                    String t2 = o2.getUserName();
+//                    return t1.compareTo(t2);
+//                }
+//            });
+//
+//            mAdapter.notifyDataSetChanged();
 
             if (swipeLayout.isRefreshing())
                 swipeLayout.setRefreshing(false);

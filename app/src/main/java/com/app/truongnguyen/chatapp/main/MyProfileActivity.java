@@ -36,8 +36,6 @@ import butterknife.ButterKnife;
 
 public class MyProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private final int PICK_IMAGE_REQUEST = 71;
-    @BindView(R.id.avatar)
-    RoundedImageView mAvatar;
 
     @BindView(R.id.edi_email)
     TextInputLayout ediEmail;

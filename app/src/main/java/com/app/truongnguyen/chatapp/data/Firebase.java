@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.app.truongnguyen.chatapp.EventClass.EmptyObjectEvent;
 import com.app.truongnguyen.chatapp.EventClass.ListMessageEvent;
 import com.app.truongnguyen.chatapp.EventClass.Signal;
+import com.app.truongnguyen.chatapp.EventClass.UserInfoListEvent;
 import com.app.truongnguyen.chatapp.widget.BitmapCustom;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -434,6 +435,8 @@ public class Firebase {
 
                         mUser = value.toObject(User.class);
                         ArrayList<String> data = mUser.getFriendList();
+                        ArrayList<UserInfo> infoArrayList = new ArrayList<>();
+
                         if (data != null && !data.isEmpty()) {
                             for (String id : data)
                                 mDbs.collection(USERS_FOLDER).document(id)
@@ -447,8 +450,8 @@ public class Firebase {
                                                 }
 
                                                 UserInfo u = documentSnapshot.toObject(UserInfo.class);
-
-                                                EventBus.getDefault().postSticky(u);
+                                                infoArrayList.add(u);
+                                                EventBus.getDefault().postSticky(new UserInfoListEvent(infoArrayList));
 
                                                 //Download avatar
                                                 if (u.getAvatarUri() != null) {
@@ -461,7 +464,7 @@ public class Firebase {
 
                                                                     u.setAvatarBitmap(b);
 
-                                                                    EventBus.getDefault().postSticky(u);
+                                                                    EventBus.getDefault().postSticky(new UserInfoListEvent(infoArrayList));
                                                                 }
                                                             });
                                                 }
@@ -475,46 +478,6 @@ public class Firebase {
                 });
     }
 
-    public void getPeople() {
-        mDbs.collection("users").get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        List<UserInfo> data = queryDocumentSnapshots.toObjects(UserInfo.class);
-                        if (data != null && !data.isEmpty()) {
-                            for (UserInfo u : data)
-                                if (u.getAvatarUri() != null) {
-
-                                    //Download avatar
-                                    storage.getReference().child(u.getAvatarUri()).getBytes(MAX_DONWLOAD_SIZE_BYTES)
-                                            .addOnSuccessListener(new OnSuccessListener<byte[]>() {
-                                                @Override
-                                                public void onSuccess(byte[] bytes) {
-                                                    ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
-                                                    Bitmap b = BitmapFactory.decodeStream(arrayInputStream);
-
-                                                    u.setAvatarBitmap(b);
-
-                                                    EventBus.getDefault().postSticky(u);
-                                                }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d("1234567", "onFailure: ");
-                                        }
-                                    });
-
-
-                                } else {
-                                    EventBus.getDefault().postSticky(u);
-                                }
-                        } else {
-                            EventBus.getDefault().postSticky(new EmptyObjectEvent());
-                        }
-                    }
-                });
-
-    }
 
     public boolean isFriend(String hisId) {
         if (mUser.getFriendList() == null || mUser.getFriendList().isEmpty())
