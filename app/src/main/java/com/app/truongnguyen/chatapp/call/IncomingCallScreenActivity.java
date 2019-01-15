@@ -1,23 +1,32 @@
 package com.app.truongnguyen.chatapp.call;
 
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.User;
+import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.storage.FirebaseStorage;
 import com.sinch.android.rtc.calling.Call;
 import com.sinch.android.rtc.calling.CallEndCause;
 import com.sinch.android.rtc.video.VideoCallListener;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 
 public class IncomingCallScreenActivity extends BaseActivity {
@@ -47,22 +56,32 @@ public class IncomingCallScreenActivity extends BaseActivity {
         if (call != null) {
             call.addCallListener(new SinchCallListener());
             final TextView remoteUser = (TextView) findViewById(R.id.remoteUser);
-            FirebaseDatabase.getInstance().getReference().child("Users").child(call.getRemoteUserId()).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    User user = dataSnapshot.getValue(User.class);
-                    if (user != null) {
-                        if (user.getUserName() != null)
-                            remoteUser.setText(user.getUserName());
-                        else
-                            remoteUser.setText(user.getEmail());
+            final ImageView userAvatar = findViewById(R.id.remoteUserAvatar);
+            Firebase.getInstance().getUserFolderDbs().document(call.getRemoteUserId()).get().addOnSuccessListener(
+                    new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot != null && documentSnapshot.exists()) {
+                                UserInfo info = documentSnapshot.toObject(UserInfo.class);
+                                if (info.getUserName() != null)
+                                    remoteUser.setText(info.getUserName());
+                                else
+                                    remoteUser.setText(info.getEmail());
+                                if (info.getAvatarUri() != null) {
+                                    FirebaseStorage.getInstance().getReference().child(info.getAvatarUri()).getBytes(Firebase.MAX_DONWLOAD_SIZE_BYTES)
+                                            .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                                @Override
+                                                public void onSuccess(byte[] bytes) {
+                                                    ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
+                                                    Bitmap bmp = BitmapFactory.decodeStream(arrayInputStream);
+                                                    userAvatar.setImageBitmap(bmp);
+                                                }
+                                            });
+                                }
+                            }
+                        }
                     }
-                }
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
+            );
 
         } else {
             Log.e(TAG, "Started with invalid callId, aborting");

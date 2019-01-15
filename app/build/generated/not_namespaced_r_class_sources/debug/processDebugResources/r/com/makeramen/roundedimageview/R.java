@@ -29,22 +29,22 @@ public final class R {
         private id() {}
 
         public static final int clamp = 0x7f080045;
-        public static final int mirror = 0x7f0800b4;
-        public static final int repeat = 0x7f0800d1;
+        public static final int mirror = 0x7f0800b5;
+        public static final int repeat = 0x7f0800d3;
     }
     public static final class string {
         private string() {}
 
-        public static final int define_roundedimageview = 0x7f0e0048;
-        public static final int library_roundedimageview_author = 0x7f0e005f;
-        public static final int library_roundedimageview_authorWebsite = 0x7f0e0060;
-        public static final int library_roundedimageview_isOpenSource = 0x7f0e0061;
-        public static final int library_roundedimageview_libraryDescription = 0x7f0e0062;
-        public static final int library_roundedimageview_libraryName = 0x7f0e0063;
-        public static final int library_roundedimageview_libraryVersion = 0x7f0e0064;
-        public static final int library_roundedimageview_libraryWebsite = 0x7f0e0065;
-        public static final int library_roundedimageview_licenseId = 0x7f0e0066;
-        public static final int library_roundedimageview_repositoryLink = 0x7f0e0067;
+        public static final int define_roundedimageview = 0x7f0f0048;
+        public static final int library_roundedimageview_author = 0x7f0f005f;
+        public static final int library_roundedimageview_authorWebsite = 0x7f0f0060;
+        public static final int library_roundedimageview_isOpenSource = 0x7f0f0061;
+        public static final int library_roundedimageview_libraryDescription = 0x7f0f0062;
+        public static final int library_roundedimageview_libraryName = 0x7f0f0063;
+        public static final int library_roundedimageview_libraryVersion = 0x7f0f0064;
+        public static final int library_roundedimageview_libraryWebsite = 0x7f0f0065;
+        public static final int library_roundedimageview_licenseId = 0x7f0f0066;
+        public static final int library_roundedimageview_repositoryLink = 0x7f0f0067;
     }
     public static final class styleable {
         private styleable() {}

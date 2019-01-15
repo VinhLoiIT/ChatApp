@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/background_color"
-    android:weightSum="8">
+    android:weightSum="5">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,19 +17,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
+            android:layout_margin="14dp"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text="Sample User"
-            android:textSize="32sp" />
+            android:textSize="28sp" />
+        <TextView
+            android:id="@+id/callState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RINGING"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_gravity="center"/>
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/remoteUserAvatar"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="3"
         android:orientation="vertical"
-        android:background="@drawable/avatar"
+        android:background="@drawable/avatar2"
         android:padding="0dip">
         <LinearLayout
             android:id="@+id/remoteVideo"
@@ -40,10 +50,10 @@
             android:orientation="horizontal"/>
         <RelativeLayout
             android:id="@+id/localVideo"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -52,23 +62,13 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:gravity="center">
-        <TextView
-            android:id="@+id/callState"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Ringing"
-            android:maxLines="1"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:layout_gravity="center"/>
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/hangupButton"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/ic_video_call_black_48dp"
+            android:src="@drawable/ic_close_black_48dp"
             app:fabSize="normal"
             android:scaleType="center"/>
         <TextView

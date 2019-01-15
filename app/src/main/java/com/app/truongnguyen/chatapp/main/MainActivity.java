@@ -11,12 +11,13 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.app.truongnguyen.chatapp.PagerAdapter;
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.call.BaseActivity;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.FragmentNavigationController;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.PresentStyle;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ViewPager pager;
     private TabLayout tabLayout;
@@ -116,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
     public void goHomeScreen() {
         dismiss();
         restartHomeScreen();
+    }
+
+    @Override
+    protected void onServiceConnected() {
+        getSinchServiceInterface().startClient(firebase.getUid());
     }
 }
 

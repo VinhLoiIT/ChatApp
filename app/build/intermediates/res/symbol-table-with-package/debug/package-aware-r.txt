@@ -1176,6 +1176,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avatar
+drawable avatar2
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_color
@@ -2600,6 +2601,7 @@ drawable ic_back_button
 drawable ic_camera_alt_black_24dp
 drawable ic_change_password
 drawable ic_chat_black_24dp
+drawable ic_close_black_48dp
 drawable ic_contact_black_24dp
 drawable ic_face_black_24dp
 drawable ic_info_about_us
@@ -2861,6 +2863,7 @@ id login_history
 id logout
 id masked
 id media_actions
+id menuCall
 id messError
 id message
 id middle
@@ -2893,6 +2896,7 @@ id rad_male
 id rad_other
 id radio
 id remoteUser
+id remoteUserAvatar
 id remoteVideo
 id repeat
 id right
@@ -3095,7 +3099,9 @@ layout select_dialog_singlechoice_material
 layout sign_in
 layout sign_up
 layout support_simple_spinner_dropdown_item
+menu menu_call
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 raw phone_loud1
 raw progress_tone

@@ -1,24 +1,37 @@
 package com.app.truongnguyen.chatapp.main;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.EventClass.ListMessageEvent;
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.call.CallScreenActivity;
+import com.app.truongnguyen.chatapp.call.SinchService;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.Message;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.sinch.android.rtc.calling.Call;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -27,6 +40,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -127,6 +141,7 @@ public class ChattingFragment extends SupportFragment {
         getMainActivity().setSupportActionBar(chatToolbar);
 
         chatToolbar.setTitle(hisName);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -180,5 +195,67 @@ public class ChattingFragment extends SupportFragment {
 
         inputMsg.setText("");
         inputMsg.requestFocus();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_call, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menuCall) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M || checkAllPermission())
+                makeVideoCall();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private String[] listPermission =
+            {
+                    Manifest.permission.RECORD_AUDIO,
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.READ_PHONE_STATE
+            };
+
+    private boolean checkAllPermission() {
+        List<String> listNeedPermission = new ArrayList<>();
+
+        for (String p : listPermission)
+            if (ContextCompat.checkSelfPermission(getContext(), p) != PackageManager.PERMISSION_GRANTED)
+                listNeedPermission.add(p);
+
+        if (listNeedPermission.isEmpty())
+            return true;
+
+        ActivityCompat.requestPermissions(getMainActivity(), listNeedPermission.toArray(new String[listNeedPermission.size()]), RC_CHECK_PERMISSION);
+        return false;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case RC_CHECK_PERMISSION:
+                if (grantResults.length > 0) {
+                    String per = "";
+                    for (int i = 0; i < grantResults.length; i++)
+                        if (grantResults[i] == PackageManager.PERMISSION_DENIED)
+                            per += ('\n' + permissions[i]);
+                    if (!per.equals(""))
+                        Toast.makeText(getContext(), "Permission denied: " + per, Toast.LENGTH_SHORT).show();
+                    else
+                        makeVideoCall();
+                }
+        }
+    }
+
+    private void makeVideoCall() {
+        Call call = getMainActivity().getSinchServiceInterface().callUserVideo(otherId);
+        Intent intent = new Intent(getActivity(), CallScreenActivity.class);
+        String callID = call.getCallId();
+        intent.putExtra(SinchService.CALL_ID, call.getCallId());
+        startActivity(intent);
     }
 }

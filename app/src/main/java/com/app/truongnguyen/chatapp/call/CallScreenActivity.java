@@ -1,11 +1,16 @@
 package com.app.truongnguyen.chatapp.call;
 
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.User;
+import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.storage.FirebaseStorage;
 import com.sinch.android.rtc.AudioController;
 import com.sinch.android.rtc.calling.Call;
 import com.sinch.android.rtc.calling.CallEndCause;
@@ -13,6 +18,9 @@ import com.sinch.android.rtc.calling.CallState;
 import com.sinch.android.rtc.video.VideoCallListener;
 import com.sinch.android.rtc.video.VideoController;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -25,6 +33,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
@@ -48,6 +57,7 @@ public class CallScreenActivity extends BaseActivity {
     private TextView mCallDuration;
     private TextView mCallState;
     private TextView mCallerName;
+    private RelativeLayout mCallerAvatar;
 
     private class UpdateCallDurationTask extends TimerTask {
 
@@ -83,6 +93,7 @@ public class CallScreenActivity extends BaseActivity {
         mAudioPlayer = new AudioPlayer(this);
         mCallDuration = (TextView) findViewById(R.id.callDuration);
         mCallerName = (TextView) findViewById(R.id.remoteUser);
+        mCallerAvatar = findViewById(R.id.remoteUserAvatar);
         mCallState = (TextView) findViewById(R.id.callState);
         FloatingActionButton endCallButton = findViewById(R.id.hangupButton);
 
@@ -122,23 +133,31 @@ public class CallScreenActivity extends BaseActivity {
 
         Call call = getSinchServiceInterface().getCall(mCallId);
         if (call != null) {
-            FirebaseDatabase.getInstance().getReference().child("Users").child(call.getRemoteUserId()).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    User user = dataSnapshot.getValue(User.class);
-                    if (user != null) {
-                        if (user.getUserName() != null)
-                            mCallerName.setText(user.getUserName());
-                        else
-                            mCallerName.setText(user.getEmail());
+            Firebase.getInstance().getUserFolderDbs().document(call.getRemoteUserId()).get().addOnSuccessListener(
+                    new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot != null && documentSnapshot.exists()) {
+                                UserInfo info = documentSnapshot.toObject(UserInfo.class);
+                                if (info.getUserName() != null)
+                                    mCallerName.setText(info.getUserName());
+                                else
+                                    mCallerName.setText(info.getEmail());
+                                if (info.getAvatarUri() != null) {
+                                    FirebaseStorage.getInstance().getReference().child(info.getAvatarUri()).getBytes(Firebase.MAX_DONWLOAD_SIZE_BYTES)
+                                            .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                                @Override
+                                                public void onSuccess(byte[] bytes) {
+                                                    ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
+                                                    Bitmap bmp = BitmapFactory.decodeStream(arrayInputStream);
+                                                    mCallerAvatar.setBackground(new BitmapDrawable(getResources(), bmp));
+                                                }
+                                            });
+                                }
+                            }
+                        }
                     }
-                }
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-
+            );
             mCallState.setText(call.getState().toString());
             if (call.getState() == CallState.ESTABLISHED) {
                 //when the call is established, addVideoViews configures the video to  be shown
