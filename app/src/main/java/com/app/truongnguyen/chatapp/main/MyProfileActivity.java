@@ -8,20 +8,16 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.EventClass.DataIsChanged;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
+import com.app.truongnguyen.chatapp.data.User;
 import com.app.truongnguyen.chatapp.widget.BitmapCustom;
 import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.bumptech.glide.Glide;
@@ -46,47 +42,25 @@ import butterknife.ButterKnife;
 public class MyProfileActivity extends AppCompatActivity {
     private final int PICK_IMAGE_REQUEST = 71;
 
-    @BindView(R.id.edi_email)
-    TextInputLayout ediEmail;
-    @BindView(R.id.txt_email)
-    TextInputEditText txtEmail;
-
-    @BindView(R.id.txt_birthday)
-    TextView txtBirthday;
-
-    @BindView(R.id.rad_group_gender)
-    RadioGroup radGroupGender;
-    @BindView(R.id.rad_male)
-    RadioButton radMale;
-    @BindView(R.id.rad_female)
-    RadioButton radFemale;
-    @BindView(R.id.rad_other)
-    RadioButton radOther;
-
-    //Contact
-    @BindView(R.id.edi_phonenumber)
-    TextInputLayout ediPhoneNumber;
-    @BindView(R.id.txt_phonenumber)
-    TextInputEditText txtPhoneNumber;
-
-    @BindView(R.id.edi_address)
-    TextInputLayout ediAddress;
-    @BindView(R.id.txt_address)
-    TextInputEditText txtAddress;
-
-    //Button
-    @BindView(R.id.btn_save)
-    Button btnSave;
-
-    @BindView(R.id.avatar)
+    @BindView(R.id.user_profile_photo)
     RoundedImageView avatarImageView;
+    @BindView(R.id.user_profile_name)
+    TextView tvName;
+    @BindView(R.id.address)
+    TextView textAddress;
+    @BindView(R.id.email)
+    TextView tvtEmail;
+    @BindView(R.id.phone_number)
+    TextView tvtphoneNumber;
+    @BindView(R.id.edittext_sex)
+    TextView gender;
+
+
     @BindView(R.id.btn_change_avatar)
     ImageView btnChangeAvatar;
-    @BindView(R.id.tv_user_name)
-    TextView tvName;
-
     private Uri filePath;
     private Firebase firebase = Firebase.getInstance();
+    private User user;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -94,10 +68,23 @@ public class MyProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_profile);
         ButterKnife.bind(this);
 
+        user = firebase.getCurrentUser();
 
-        tvName.setText(firebase.getCurrentUser().getUserName());
+        String nullInfo = "nothing";
+        tvName.setText(user.getUserName());
+        tvtEmail.setText(user.getEmail());
+        textAddress.setText(nullInfo);
+        if (user.getAddress() != null)
+            textAddress.setText(user.getAddress());
+        tvtphoneNumber.setText(nullInfo);
+        if (user.getPhoneNumber() != null)
+            tvtphoneNumber.setText(user.getPhoneNumber());
+        gender.setText(nullInfo);
+        if (user.getGender() != null)
+            gender.setText(user.getGender());
 
-        String avatarUrl = firebase.getmCurrentUser().getAvatarUrl();
+
+        String avatarUrl = user.getAvatarUrl();
         if (avatarUrl != null)
             Glide.with(this).load(avatarUrl).into(avatarImageView);
 

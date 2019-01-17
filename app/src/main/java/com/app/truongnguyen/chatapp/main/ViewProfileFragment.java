@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.R;
@@ -18,6 +18,7 @@ import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.PresentStyle;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FieldValue;
@@ -27,16 +28,24 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 @SuppressLint("ValidFragment")
-public class ViewProfileFragment extends SupportFragment implements View.OnClickListener {
+public class ViewProfileFragment extends SupportFragment {
     public static ViewProfileFragment instance = null;
     @BindView(R.id.user_profile_photo)
     RoundedImageView avatarImageView;
     @BindView(R.id.user_profile_name)
     TextView tvName;
+    @BindView(R.id.address)
+    TextView textAddress;
+    @BindView(R.id.email)
+    TextView tvtEmail;
+    @BindView(R.id.phone_number)
+    TextView tvtphoneNumber;
+    @BindView(R.id.edittext_sex)
+    TextView gender;
     @BindView(R.id.btn_addfriend)
-    Button btnAddFrienf;
+    ImageView btnAddFrienf;
     @BindView(R.id.btn_to_chat)
-    Button btnToChat;
+    ImageView btnToChat;
 
     private Context mContext;
     private Firebase firebase = Firebase.getInstance();
@@ -61,7 +70,7 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         return PresentStyle.FADE;
     }
 
-    public ViewProfileFragment(Context mContext, UserInfo hisInfo) {
+    private ViewProfileFragment(Context mContext, UserInfo hisInfo) {
         this.mContext = mContext;
         this.hisInfo = hisInfo;
     }
@@ -69,7 +78,7 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
     @Nullable
     @Override
     protected View onCreateView(LayoutInflater inflater, ViewGroup container) {
-        return inflater.inflate(R.layout.view_profile, container, false);
+        return inflater.inflate(R.layout.fragment_view_profile, container, false);
     }
 
     @Override
@@ -80,11 +89,23 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         mContext = getMainActivity();
 
         setBtnAddFrienf(firebase.isFriend(hisInfo.getId()));
-        btnToChat.setOnClickListener(this);
-        btnAddFrienf.setOnClickListener(this);
-        avatarImageView.setOnClickListener(this);
 
+        setOnclick();
+
+
+        String nullInfo = "nothing";
         tvName.setText(hisInfo.getUserName());
+        tvtEmail.setText(hisInfo.getEmail());
+        textAddress.setText(nullInfo);
+        if (hisInfo.getAddress() != null)
+            textAddress.setText(hisInfo.getAddress());
+        tvtphoneNumber.setText(nullInfo);
+        if (hisInfo.getPhoneNumber() != null)
+            tvtphoneNumber.setText(hisInfo.getPhoneNumber());
+        gender.setText(nullInfo);
+        if (hisInfo.getGender() != null)
+            gender.setText(hisInfo.getGender());
+
         //set avatar
         if (hisInfo.getAvatarIconUrl() != null) {
             Glide.with(mContext).load(hisInfo.getAvatarIconUrl()).into(avatarImageView);
@@ -93,26 +114,23 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        Bundle bundle;
+    private void setBtnAddFrienf(boolean isFirend) {
+        if (isFirend) {
+            btnAddFrienf.setImageResource(R.drawable.ic_remove_friend);
+        } else btnAddFrienf.setImageResource(R.drawable.ic_person_add_blue_24dp);
+    }
 
-        switch (v.getId()) {
-            case R.id.avatar:
-                Intent intent = new Intent(getMainActivity(), ViewImageActivity.class);
-
-                bundle = new Bundle();
-                bundle.putString("imageUrl", this.hisInfo.getAvatarUrl());
-                intent.putExtras(bundle);
-
-                startActivity(intent);
-                break;
-
-            case R.id.btn_to_chat:
-                ChattingFragment chattingFragment = new ChattingFragment(mContext, hisInfo, null);
+    public void setOnclick() {
+        btnToChat.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
+                ChattingFragment chattingFragment = ChattingFragment.newInstance(mContext, hisInfo, null);
                 ((MainActivity) mContext).presentFragment(chattingFragment);
-                break;
-            case R.id.btn_addfriend:
+            }
+        });
+        btnAddFrienf.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
                 String listFriendFolder = Firebase.LIST_FRIEND_FOLDER;
 
                 ProgressDialog progressDialog = new ProgressDialog(getMainActivity());
@@ -158,13 +176,19 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
                             });
                 }
 
-                break;
-        }
-    }
+            }
+        });
+        avatarImageView.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
+                Intent intent = new Intent(getMainActivity(), ViewImageActivity.class);
 
-    private void setBtnAddFrienf(boolean isFirend) {
-        if (isFirend) {
-            btnAddFrienf.setBackgroundResource(R.drawable.ic_remove_friend);
-        } else btnAddFrienf.setBackgroundResource(R.drawable.ic_person_add_blue_24dp);
+                Bundle bundle = new Bundle();
+                bundle.putString("imageUrl", hisInfo.getAvatarUrl());
+                intent.putExtras(bundle);
+
+                startActivity(intent);
+            }
+        });
     }
 }

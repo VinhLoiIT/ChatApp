@@ -21,6 +21,43 @@ public class UserInfo {
     @SerializedName("avatarBitmap")
     @Expose
     private Bitmap avatarBitmap;
+    @SerializedName("gender")
+    @Expose
+    private String gender;
+    @SerializedName("phoneNumber")
+    @Expose
+    private String phoneNumber;
+    @SerializedName("address")
+    @Expose
+    private String address;
+
+    public String getAddress() {
+
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getGender() {
+
+        return gender;
+    }
+
+    public void setGender(String gender) {
+
+        this.gender = gender;
+    }
+
+    public String getPhoneNumber() {
+
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
     @SerializedName("avatarUri")
     @Expose
     private String avatarUri;

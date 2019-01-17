@@ -7,6 +7,19 @@ import java.util.ArrayList;
 
 public class User {
 
+
+    @SerializedName("phoneNumber")
+    @Expose
+    private String phoneNumber;
+
+    public String getPhoneNumber() {
+
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
     @SerializedName("address")
     @Expose
     private String address;

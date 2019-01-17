@@ -73,6 +73,7 @@
         android:layout_marginTop="@dimen/marginTop">
 
         <android.support.v7.widget.RecyclerView
+            android:background="?android:attr/selectableItemBackground"
             android:id="@+id/list_of_friend"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

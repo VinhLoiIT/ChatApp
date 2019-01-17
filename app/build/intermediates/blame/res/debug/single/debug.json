@@ -40,12 +40,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f404.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3f9.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3f9.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_2653.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_2653.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3f9.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3f9.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f44d.png.flat",
@@ -68,12 +68,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-hdpi-v4\\orca_composer_divider_horizontal.9.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f6d0.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f6d0.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f474.png.flat",
@@ -108,12 +108,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4c1.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4c1.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4aa_1f3ff.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4aa_1f3ff.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4c1.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4c1.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f6c1.png.flat",
@@ -140,12 +140,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f46b.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4fb.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4fb.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_icon_color_selector.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\color\\mtrl_tabs_icon_color_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4fb.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4fb.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_seek_thumb.xml.flat",
@@ -236,12 +236,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3a7.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f446_1f3ff.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f446_1f3ff.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f699.png.flat",
@@ -320,12 +320,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\color\\mtrl_tabs_icon_color_selector_colored.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f438.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f438.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_linear_in.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\interpolator-v21\\mtrl_fast_out_linear_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f438.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f438.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
@@ -356,12 +356,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\32a552146927a890086828de0eccf2cb\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f570.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f570.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f370.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f370.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f570.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f570.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4ec.png.flat",
@@ -448,20 +448,20 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f308.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f448_1f3fd.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f448_1f3fd.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3bc.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3bc.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_2757.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_2757.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f448_1f3fd.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f448_1f3fd.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_2757.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_2757.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f47a.png.flat",
@@ -532,12 +532,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f595.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f449_1f3fb.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f449_1f3fb.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -552,12 +552,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f443_1f3fb.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_borderless_text_material.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f6b5_1f3fd.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f6b5_1f3fd.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f477_1f3fb.png.flat",
@@ -568,32 +568,32 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3da.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f469_200d_1f469_200d_1f466.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f469_200d_1f469_200d_1f466.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f471_1f3fb.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f471_1f3fb.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f471_1f3fb.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f471_1f3fb.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f469_200d_1f469_200d_1f466.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f469_200d_1f469_200d_1f466.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f33a.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f33a.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f387.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f387.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f5e3.png.flat",
@@ -636,12 +636,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4d8.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4d8.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f33b.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f33b.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4d8.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4d8.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f578.png.flat",
@@ -692,12 +692,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f334.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f30d.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f30d.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_26f9.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_26f9.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f30d.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f30d.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -724,12 +724,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f31d.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f31d.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_grow_fade_in_from_bottom.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f31d.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f31d.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_25fc.png.flat",
@@ -744,12 +744,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f22f.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_261d.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_261d.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f35f.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f35f.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_261d.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_261d.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -836,12 +836,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f500.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_emojicons.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\layout\\emojicons.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -864,12 +864,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3ff.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f629.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f629.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f645_1f3fc.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f645_1f3fc.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f629.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f629.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3ac.png.flat",
@@ -948,12 +948,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_right_message_item.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\layout\\right_message_item.xml"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f553.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f553.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_right_message_item.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\layout\\right_message_item.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_orca_emoji_backspace_front_normal.png.flat",
@@ -1012,12 +1012,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_emoji_activity_focus.png.flat",
@@ -1120,12 +1120,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f475_1f3fe.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f464.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f464.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_voice_search_api_material.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f464.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f464.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_264b.png.flat",
@@ -1200,12 +1200,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3f8.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f621.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f621.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f421.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f421.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f621.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f621.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f44b_1f3fc.png.flat",
@@ -1228,16 +1228,16 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f470_1f3fb.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_2199.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_2199.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_orca_attachments_arrow_reversed.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_face_black_24dp.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\drawable\\ic_face_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_orca_attachments_arrow_reversed.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-hdpi-v4\\orca_attachments_arrow_reversed.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_2199.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_2199.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_26f3.png.flat",
@@ -1300,12 +1300,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\animator\\slide_fragment_horizontal_left_in.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4de.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4de.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f41a.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f41a.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4de.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4de.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f501.png.flat",
@@ -1320,48 +1320,48 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f916.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f301.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f301.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f47c_1f3ff.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f47c_1f3ff.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f301.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f301.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f21a.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f21a.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f446.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f446.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f439.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f439.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f446.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f446.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f47b.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f47b.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f6a3_1f3ff.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f6a3_1f3ff.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro_app.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\layout\\fragment_intro_app.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f509.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f509.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f6a3_1f3ff.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f6a3_1f3ff.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\animator_zoom_from_right_corner_left_out.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\animator\\zoom_from_right_corner_left_out.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f448_1f3fc.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f448_1f3fc.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\animator_zoom_from_right_corner_left_out.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\animator\\zoom_from_right_corner_left_out.xml"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f509.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f509.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f442_1f3fc.png.flat",
@@ -1392,36 +1392,36 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f44b_1f3fe.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3c4.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3c4.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3ca.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3ca.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3c4.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3c4.png"
-    },
-    {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f232.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f232.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f377.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f377.png"
     },
     {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f232.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f232.png"
+    },
+    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4e0.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4e0.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_orca_emoji_backspace_back_normal.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-hdpi-v4\\orca_emoji_backspace_back_normal.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-ldrtl-xxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_orca_emoji_backspace_back_normal.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-hdpi-v4\\orca_emoji_backspace_back_normal.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\animator_card_flip_vertical_left_out.xml.flat",
@@ -1480,12 +1480,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f44c.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f41f.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f41f.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f6c0.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f6c0.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f41f.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f41f.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f61f.png.flat",
@@ -1520,12 +1520,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_2b1c.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_btn_checkable.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f510.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f510.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_btn_checkable.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4b9.png.flat",
@@ -1564,16 +1564,16 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_3299.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f466.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f466.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f43f.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f43f.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f466.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f466.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_26a1.png.flat",
@@ -1588,12 +1588,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\drawable\\button_red_cornor.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3e9.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3e9.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3e9.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3e9.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1636,28 +1636,28 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_0034.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_light.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color\\abc_secondary_text_material_light.xml"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3c4_1f3fd.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3c4_1f3fd.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_light.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f58c.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f58c.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3c4_1f3fd.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3c4_1f3fd.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_emojicon_grid.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\layout\\emojicon_grid.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f58c.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f58c.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f587.png.flat",
@@ -1676,12 +1676,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f53a.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\animator_design_fab_show_motion_spec.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\animator\\design_fab_show_motion_spec.xml"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f4be.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f4be.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\animator_design_fab_show_motion_spec.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\animator\\design_fab_show_motion_spec.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_26c5.png.flat",
@@ -1700,16 +1700,16 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f32b.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3f3.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3f3.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f326.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f326.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_emoji_people_focus.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-hdpi-v4\\emoji_people_focus.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f326.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f326.png"
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3f3.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f3f3.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f619.png.flat",
@@ -1724,12 +1724,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f351.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f535.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f535.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f535.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f535.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f474_1f3fd.png.flat",
@@ -1752,12 +1752,12 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_261d_1f3fd.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f32d.png.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f32d.png"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d078c9e7119bbfada038832576bb2d1a\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f32d.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f32d.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\animator_rotateleft_right_out.xml.flat",
@@ -3572,6 +3572,10 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f309.png"
     },
     {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_sex.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\drawable\\ic_sex.png"
+    },
+    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_ripple_color.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08609230174ae2d94f4848e4c4a93279\\res\\color\\mtrl_btn_ripple_color.xml"
     },
@@ -3634,6 +3638,10 @@
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_270b_1f3ff.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_270b_1f3ff.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_camera.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\drawable\\ic_camera.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f3ae.png.flat",
@@ -4686,6 +4694,10 @@
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_incoming_call_screen.xml.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\layout\\activity_incoming_call_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_call_quite_blue_24dp.xml.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\drawable\\ic_call_quite_blue_24dp.xml"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_emojicon_item.xml.flat",
@@ -5844,10 +5856,6 @@
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f618.png"
     },
     {
-        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_view_profile.xml.flat",
-        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\layout\\view_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f55d.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f55d.png"
     },
@@ -6294,6 +6302,10 @@
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_emoji_travel.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-hdpi-v4\\emoji_travel.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_phone.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\drawable\\ic_phone.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -7942,6 +7954,10 @@
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_1f910.png.flat",
         "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\SuperNova-Emoji-1.1.aar\\e7f13f1afbe7f459b6d9e4297f831f2f\\res\\drawable-nodpi-v4\\emoji_1f910.png"
+    },
+    {
+        "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home.png.flat",
+        "source": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\src\\main\\res\\drawable\\ic_home.png"
     },
     {
         "merged": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4_emoji_270a.png.flat",
