@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,7 +170,7 @@ public class ConversationsFragment extends SupportFragment {
         mCvsIdList.clear();
 
         mCvsIdList = (ArrayList<String>) cvsIdList.clone();
-
+        Log.d("54321", "getConversations: ");
         //Get Conversation
         for (String cvsId : cvsIdList) {
             firebase.getCvsDocWithId(cvsId)
@@ -189,7 +190,7 @@ public class ConversationsFragment extends SupportFragment {
                                     cvsList.remove(i);
                                     cvsList.add(0, c);
                                 }
-
+                            Log.d("54321", "onEvent: CVS" +c.getId());
                             if (!replace)
                                 cvsList.add(0, c);
                             sortCvsList();

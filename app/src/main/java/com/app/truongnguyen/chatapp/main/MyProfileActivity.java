@@ -91,6 +91,8 @@ public class MyProfileActivity extends AppCompatActivity {
         avatarImageView.setOnClickListener(new OnOneClickListener() {
             @Override
             public void onOneClick(View v) {
+                if (user.getAvatarUrl() == null || "".equals(user.getAvatarUrl()))
+                    return;
                 Intent intent = new Intent(MyProfileActivity.this, ViewImageActivity.class);
 
                 Bundle bundle = new Bundle();

@@ -82,6 +82,8 @@ public class ChattingFragment extends SupportFragment {
     private Context mconContext;
     private UserInfo hisInfo;
     private String cvsId;
+    private int imageResourceBtnSendMsg_send = R.drawable.ic_send_black_24dp;
+    private int imageResourceBtnSendMsg_emoj = R.drawable.ic_like;
 
     private static ChattingFragment instance = null;
 
@@ -131,11 +133,15 @@ public class ChattingFragment extends SupportFragment {
         btnSendMess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendMsg();
+                String content = editTextMsg.getText().toString().trim();
+                if (content.equals(""))
+                    sendMsg("Like!");
+                else
+                    sendMsg(content);
             }
         });
 
-        btnSendMess.setVisibility(View.GONE);
+        btnSendMess.setImageResource(imageResourceBtnSendMsg_emoj);
 
         editTextMsg.addTextChangedListener(new TextWatcher() {
             @Override
@@ -146,9 +152,10 @@ public class ChattingFragment extends SupportFragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!editTextMsg.getText().toString().trim().equals(""))
-                    btnSendMess.setVisibility(View.VISIBLE);
+                    btnSendMess.setImageResource(imageResourceBtnSendMsg_send);
                 else
-                    btnSendMess.setVisibility(View.GONE);
+                    btnSendMess.setImageResource(imageResourceBtnSendMsg_emoj);
+
             }
 
             @Override
@@ -227,8 +234,7 @@ public class ChattingFragment extends SupportFragment {
         getMessages();
     }
 
-    private void sendMsg() {
-        String content = editTextMsg.getText().toString().trim();
+    private void sendMsg(String content) {
         if (content.equals(""))
             return;
 

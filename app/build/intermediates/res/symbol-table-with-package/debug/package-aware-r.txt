@@ -2607,6 +2607,8 @@ drawable ic_change_password_jpg
 drawable ic_chat_black_24dp
 drawable ic_close_black_48dp
 drawable ic_contact_black_24dp
+drawable ic_emoji
+drawable ic_emoji_1
 drawable ic_face_black_24dp
 drawable ic_history_48px_512
 drawable ic_history_green
@@ -2616,6 +2618,7 @@ drawable ic_info_outline_quite_blue_24dp
 drawable ic_keyboard_backspace_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_like
 drawable ic_log_out
 drawable ic_login_history
 drawable ic_logout
@@ -2862,7 +2865,6 @@ id input_search
 id invisible
 id italic
 id item_touch_helper_previous_elevation
-id khung_chat
 id labeled
 id largeLabel
 id last_message_content

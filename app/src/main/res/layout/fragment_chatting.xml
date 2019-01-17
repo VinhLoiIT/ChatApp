@@ -25,13 +25,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="@dimen/marginTop"
-        android:paddingBottom="@dimen/marginTop">
+        android:paddingBottom="5dp">
 
         <ListView
             android:id="@+id/list_of_message"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/khung_chat"
+            android:layout_above="@+id/text_input_msg"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="5dp"
             android:divider="@android:color/transparent"
@@ -39,26 +39,23 @@
             android:stackFromBottom="true"
             android:transcriptMode="alwaysScroll" />
 
-        <LinearLayout
-            android:id="@+id/khung_chat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="0dp"
-            android:gravity="bottom|center"
-            android:orientation="horizontal">
-
-            <ImageView
+        <ImageView
                 android:id="@+id/emoji_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
                 android:src="@drawable/ic_smiley" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/text_input_msg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/btn_send_mess"
+                android:layout_toEndOf="@+id/emoji_button">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/edit_text_msg"
@@ -67,7 +64,6 @@
                     android:background="@drawable/rounded_corner_without_border_dark"
                     android:hint="Type a message..."
                     android:maxLines="10"
-                    android:minWidth="300dp"
                     android:minHeight="45dp"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
@@ -79,12 +75,9 @@
                 android:id="@+id/btn_send_mess"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/ripple_primary_dark"
-                android:src="@drawable/ic_send_black_24dp" />
-        </LinearLayout>
-
-
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_like" />
     </RelativeLayout>
-
 </LinearLayout>
 

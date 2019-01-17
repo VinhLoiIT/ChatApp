@@ -181,6 +181,10 @@ public class ViewProfileFragment extends SupportFragment {
         avatarImageView.setOnClickListener(new OnOneClickListener() {
             @Override
             public void onOneClick(View v) {
+
+                if (hisInfo.getAvatarUrl() == null || "".equals(hisInfo.getAvatarUrl()))
+                    return;
+
                 Intent intent = new Intent(getMainActivity(), ViewImageActivity.class);
 
                 Bundle bundle = new Bundle();
