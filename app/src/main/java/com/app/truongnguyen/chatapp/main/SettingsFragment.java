@@ -13,14 +13,14 @@ import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.app.truongnguyen.chatapp.inout.SignIn;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SettingsFragment extends SupportFragment implements View.OnClickListener {
-    @BindView(R.id.update_profile)
-    LinearLayout updateProfile;
+public class SettingsFragment extends SupportFragment {
+
     @BindView(R.id.change_password)
     LinearLayout changePassword;
     @BindView(R.id.login_history)
@@ -29,12 +29,22 @@ public class SettingsFragment extends SupportFragment implements View.OnClickLis
     LinearLayout aboutUs;
     @BindView(R.id.logout)
     LinearLayout logout;
-
+    private static SettingsFragment instance = null;
 
     public static SettingsFragment newInstance() {
-        return new SettingsFragment();
+
+        if (instance == null) {
+            instance = new SettingsFragment();
+            return instance;
+        } else
+            return null;
     }
 
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
+    }
     @Nullable
     @Override
     protected View onCreateView(LayoutInflater inflater, ViewGroup container) {
@@ -46,32 +56,36 @@ public class SettingsFragment extends SupportFragment implements View.OnClickLis
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
-        updateProfile.setOnClickListener(this);
-        changePassword.setOnClickListener(this);
-        aboutUs.setOnClickListener(this);
-        loginHistory.setOnClickListener(this);
-        logout.setOnClickListener(this);
-    }
+        changePassword.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
+                ChangePasswordFragment changePasswordFragment = new ChangePasswordFragment();
+                getMainActivity().presentFragment(changePasswordFragment);
+            }
+        });
+        aboutUs.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
+                IntroAppFragment introAppFragment = new IntroAppFragment();
+                getMainActivity().presentFragment(introAppFragment);
+            }
+        });
+        loginHistory.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.logout:
+            }
+        });
+        logout.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Firebase.getInstance().signOut();
                 Intent intent = new Intent(getMainActivity(), SignIn.class);
                 getMainActivity().startActivity(intent);
                 getMainActivity().finish();
-                break;
-            case R.id.change_password:
-                ChangePasswordFragment changePasswordFragment = new ChangePasswordFragment();
-                getMainActivity().presentFragment(changePasswordFragment);
-                break;
-            case R.id.about_us:
-                IntroAppFragment introAppFragment = new IntroAppFragment();
-                getMainActivity().presentFragment(introAppFragment);
-                break;
-        }
+            }
+        });
     }
 }
 

@@ -35,6 +35,7 @@ import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.Message;
 import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.PresentStyle;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.EventListener;
@@ -81,6 +82,28 @@ public class ChattingFragment extends SupportFragment {
     private Context mconContext;
     private UserInfo hisInfo;
     private String cvsId;
+
+    private static ChattingFragment instance = null;
+
+    public static ChattingFragment newInstance(Context mconContext, UserInfo hisInfo, String cvsId) {
+
+        if (instance == null) {
+            instance = new ChattingFragment(mconContext, hisInfo, cvsId);
+            return instance;
+        } else
+            return null;
+    }
+
+    @Override
+    public int getPresentTransition() {
+        return PresentStyle.NONE;
+    }
+
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
+    }
 
     public ChattingFragment(Context mconContext, UserInfo hisInfo, String cvsId) {
         this.mconContext = mconContext;

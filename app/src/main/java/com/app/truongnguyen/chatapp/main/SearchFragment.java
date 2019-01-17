@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.PresentStyle;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -43,17 +44,31 @@ public class SearchFragment extends SupportFragment {
     private ArrayList<UserInfo> resultList;
     private ArrayList<UserInfo> peopleList;
     private Firebase firebase = Firebase.getInstance();
+    public static SearchFragment instance = null;
 
     public static SearchFragment newInstance() {
-        return new SearchFragment();
+        if (instance == null) {
+            instance = new SearchFragment();
+            return instance;
+        } else
+            return null;
     }
 
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
+    }
     @Nullable
     @Override
     protected View onCreateView(LayoutInflater inflater, ViewGroup container) {
         return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
+    @Override
+    public int getPresentTransition() {
+        return PresentStyle.FADE;
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

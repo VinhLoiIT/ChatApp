@@ -18,7 +18,6 @@ public class SettingsFragment_ViewBinding implements Unbinder {
   public SettingsFragment_ViewBinding(SettingsFragment target, View source) {
     this.target = target;
 
-    target.updateProfile = Utils.findRequiredViewAsType(source, R.id.update_profile, "field 'updateProfile'", LinearLayout.class);
     target.changePassword = Utils.findRequiredViewAsType(source, R.id.change_password, "field 'changePassword'", LinearLayout.class);
     target.loginHistory = Utils.findRequiredViewAsType(source, R.id.login_history, "field 'loginHistory'", LinearLayout.class);
     target.aboutUs = Utils.findRequiredViewAsType(source, R.id.about_us, "field 'aboutUs'", LinearLayout.class);
@@ -32,7 +31,6 @@ public class SettingsFragment_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
-    target.updateProfile = null;
     target.changePassword = null;
     target.loginHistory = null;
     target.aboutUs = null;

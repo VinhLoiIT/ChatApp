@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.PresentStyle;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 
 import butterknife.BindView;
@@ -17,6 +18,24 @@ import butterknife.ButterKnife;
 public class IntroAppFragment extends SupportFragment {
     @BindView(R.id.btn_back)
     ImageView back;
+
+
+    private static IntroAppFragment instance = null;
+
+    public static IntroAppFragment newInstance() {
+
+        if (instance == null) {
+            instance = new IntroAppFragment();
+            return instance;
+        } else
+            return null;
+    }
+
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
+    }
 
     @Nullable
     @Override
@@ -36,5 +55,10 @@ public class IntroAppFragment extends SupportFragment {
             }
         });
 
+    }
+
+    @Override
+    public int getPresentTransition() {
+        return PresentStyle.FADE;
     }
 }

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -46,6 +47,24 @@ public class ChangePasswordFragment extends SupportFragment {
     String newPassword;
     String retype;
 
+
+    private static ChangePasswordFragment instance = null;
+
+    public static ChangePasswordFragment newInstance() {
+
+        if (instance == null) {
+            instance = new ChangePasswordFragment();
+            return instance;
+        } else
+            return null;
+    }
+
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
+    }
+
     @Nullable
     @Override
     protected View onCreateView(LayoutInflater inflater, ViewGroup container) {
@@ -57,16 +76,16 @@ public class ChangePasswordFragment extends SupportFragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
-        back.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new OnOneClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onOneClick(View v) {
                 getMainActivity().dismiss();
             }
         });
 
-        btnChangePass.setOnClickListener(new View.OnClickListener() {
+        btnChangePass.setOnClickListener(new OnOneClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onOneClick(View v) {
                 if (FirebaseAuth.getInstance() == null || FirebaseAuth.getInstance().getCurrentUser() == null)
                     return;
 

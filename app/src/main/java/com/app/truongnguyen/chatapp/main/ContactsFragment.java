@@ -58,8 +58,21 @@ public class ContactsFragment extends SupportFragment implements View.OnClickLis
     private ArrayList<String> mFriendIdList;
     private Firebase firebase = Firebase.getInstance();
 
+    private static ContactsFragment instance = null;
+
     public static ContactsFragment newInstance() {
-        return new ContactsFragment();
+
+        if (instance == null) {
+            instance = new ContactsFragment();
+            return instance;
+        } else
+            return null;
+    }
+
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
     }
 
     @Nullable

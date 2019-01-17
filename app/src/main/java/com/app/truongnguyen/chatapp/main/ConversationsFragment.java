@@ -19,6 +19,7 @@ import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.bumptech.glide.Glide;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -36,7 +37,7 @@ import java.util.Comparator;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ConversationsFragment extends SupportFragment implements View.OnClickListener {
+public class ConversationsFragment extends SupportFragment {
     @BindView(R.id.avatar)
     RoundedImageView avatarImageView;
 
@@ -58,8 +59,21 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
     private ArrayList<String> mCvsIdList;
     private Firebase firebase = Firebase.getInstance();
 
+    private static ConversationsFragment instance = null;
+
     public static ConversationsFragment newInstance() {
-        return new ConversationsFragment();
+
+        if (instance == null) {
+            instance = new ConversationsFragment();
+            return instance;
+        } else
+            return null;
+    }
+
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
     }
 
     @Nullable
@@ -77,9 +91,6 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
 
         setAvatar(true);
 
-        searchBar.setOnClickListener(this);
-        avatarImageView.setOnClickListener(this);
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
         cvsList = new ArrayList<>();
@@ -89,6 +100,21 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
         swipeLayout.setOnRefreshListener(this::refreshData);
 
         refreshData();
+        searchBar.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
+                getMainActivity().presentFragment(SearchFragment.newInstance());
+            }
+        });
+
+
+        avatarImageView.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
+                Intent intent = new Intent(getMainActivity(), MyProfileActivity.class);
+                getMainActivity().startActivity(intent);
+            }
+        });
     }
 
     public void refreshData() {
@@ -201,18 +227,4 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
             Glide.with(mContext).load(url).into(avatarImageView);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.search_bar:
-                getMainActivity().presentFragment(SearchFragment.newInstance());
-
-                break;
-            case R.id.avatar:
-                Intent intent = new Intent(getMainActivity(), MyProfileActivity.class);
-                getMainActivity().startActivity(intent);
-                //getMainActivity().presentFragment(MyProfileFragment.newInstance());
-                break;
-        }
-    }
 }

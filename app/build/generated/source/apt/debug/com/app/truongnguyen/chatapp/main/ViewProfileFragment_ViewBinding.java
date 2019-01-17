@@ -20,8 +20,8 @@ public class ViewProfileFragment_ViewBinding implements Unbinder {
   public ViewProfileFragment_ViewBinding(ViewProfileFragment target, View source) {
     this.target = target;
 
-    target.avatarImageView = Utils.findRequiredViewAsType(source, R.id.avatar, "field 'avatarImageView'", RoundedImageView.class);
-    target.tvName = Utils.findRequiredViewAsType(source, R.id.tv_user_name, "field 'tvName'", TextView.class);
+    target.avatarImageView = Utils.findRequiredViewAsType(source, R.id.user_profile_photo, "field 'avatarImageView'", RoundedImageView.class);
+    target.tvName = Utils.findRequiredViewAsType(source, R.id.user_profile_name, "field 'tvName'", TextView.class);
     target.btnAddFrienf = Utils.findRequiredViewAsType(source, R.id.btn_addfriend, "field 'btnAddFrienf'", Button.class);
     target.btnToChat = Utils.findRequiredViewAsType(source, R.id.btn_to_chat, "field 'btnToChat'", Button.class);
   }

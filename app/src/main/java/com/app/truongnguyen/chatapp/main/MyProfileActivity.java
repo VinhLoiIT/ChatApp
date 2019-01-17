@@ -23,6 +23,7 @@ import com.app.truongnguyen.chatapp.EventClass.DataIsChanged;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.widget.BitmapCustom;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,7 +43,7 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyProfileActivity extends AppCompatActivity {
     private final int PICK_IMAGE_REQUEST = 71;
 
     @BindView(R.id.edi_email)
@@ -93,20 +94,16 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_my_profile);
         ButterKnife.bind(this);
 
-        btnChangeAvatar.setOnClickListener(this);
-        avatarImageView.setOnClickListener(this);
 
         tvName.setText(firebase.getCurrentUser().getUserName());
 
         String avatarUrl = firebase.getmCurrentUser().getAvatarUrl();
         if (avatarUrl != null)
             Glide.with(this).load(avatarUrl).into(avatarImageView);
-    }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.avatar:
+        avatarImageView.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
                 Intent intent = new Intent(MyProfileActivity.this, ViewImageActivity.class);
 
                 Bundle bundle = new Bundle();
@@ -114,11 +111,14 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
                 intent.putExtras(bundle);
 
                 startActivity(intent);
-                break;
-            case R.id.btn_change_avatar:
+            }
+        });
+        btnChangeAvatar.setOnClickListener(new OnOneClickListener() {
+            @Override
+            public void onOneClick(View v) {
                 chooseImage();
-                break;
-        }
+            }
+        });
     }
 
     private void chooseImage() {

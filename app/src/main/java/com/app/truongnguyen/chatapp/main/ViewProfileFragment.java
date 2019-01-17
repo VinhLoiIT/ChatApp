@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.PresentStyle;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,9 +28,10 @@ import butterknife.ButterKnife;
 
 @SuppressLint("ValidFragment")
 public class ViewProfileFragment extends SupportFragment implements View.OnClickListener {
-    @BindView(R.id.avatar)
+    public static ViewProfileFragment instance = null;
+    @BindView(R.id.user_profile_photo)
     RoundedImageView avatarImageView;
-    @BindView(R.id.tv_user_name)
+    @BindView(R.id.user_profile_name)
     TextView tvName;
     @BindView(R.id.btn_addfriend)
     Button btnAddFrienf;
@@ -40,6 +42,25 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
     private Firebase firebase = Firebase.getInstance();
     private UserInfo hisInfo;
 
+    public static ViewProfileFragment newInstance(Context mContext, UserInfo hisInfo) {
+        if (instance == null) {
+            instance = new ViewProfileFragment(mContext, hisInfo);
+            return instance;
+        } else
+            return null;
+    }
+
+    @Override
+    public void onDestroy() {
+        instance = null;
+        super.onDestroy();
+    }
+
+    @Override
+    public int getPresentTransition() {
+        return PresentStyle.FADE;
+    }
+
     public ViewProfileFragment(Context mContext, UserInfo hisInfo) {
         this.mContext = mContext;
         this.hisInfo = hisInfo;
@@ -48,7 +69,7 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
     @Nullable
     @Override
     protected View onCreateView(LayoutInflater inflater, ViewGroup container) {
-        return inflater.inflate(R.layout.fragment_view_profile, container, false);
+        return inflater.inflate(R.layout.view_profile, container, false);
     }
 
     @Override

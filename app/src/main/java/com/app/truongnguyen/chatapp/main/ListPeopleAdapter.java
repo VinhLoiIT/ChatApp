@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -59,13 +60,13 @@ public class ListPeopleAdapter extends RecyclerView.Adapter<ListPeopleAdapter.Vi
             email = itemView.findViewById(R.id.friend_email);
             avatar = itemView.findViewById(R.id.avatar);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new OnOneClickListener() {
                 @Override
-                public void onClick(View view) {
+                public void onOneClick(View v) {
                     if (!Firebase.getInstance().getUid().equals(userInfo.getId())) {
-                        ViewProfileFragment viewProfileFragment = new ViewProfileFragment(context, userInfo);
-
-                        ((MainActivity) context).presentFragment(viewProfileFragment);
+                        ViewProfileFragment viewProfileFragment = ViewProfileFragment.newInstance(context, userInfo);
+                        if (viewProfileFragment != null)
+                            ((MainActivity) context).presentFragment(viewProfileFragment);
                     } else {
                         Intent intent = new Intent(context, MyProfileActivity.class);
                         context.startActivity(intent);

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
@@ -33,9 +34,9 @@ public class ViewImageActivity extends AppCompatActivity {
             if (imageUrl != null)
                 Glide.with(this).load(imageUrl).into(imageView);
         }
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new OnOneClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onOneClick(View v) {
                 finish();
             }
         });
