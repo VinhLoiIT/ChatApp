@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/chatToolbar"
-
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/quitequite_while"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:title="Settings"
-        app:titleTextColor="#000" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/q_while">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="47dp"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:text="Introduction"
+            android:textColor="@color/colorBlack"
+            android:textSize="25sp" />
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/update_profile"
@@ -30,6 +38,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:background="?android:attr/selectableItemBackground"
         android:id="@+id/change_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,12 +71,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:background="?android:attr/selectableItemBackground"
         android:id="@+id/login_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
+            android:background="@drawable/ripple_primary_dark"
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
@@ -94,12 +105,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:background="?android:attr/selectableItemBackground"
         android:id="@+id/about_us"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
+            android:background="@drawable/ripple_primary_dark"
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
@@ -132,6 +145,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="90dp">
 

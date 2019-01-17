@@ -30,7 +30,7 @@
             android:background="@color/quite_while"
             android:outlineAmbientShadowColor="@color/quite_while"
             app:tabGravity="fill"
-            app:tabRippleColor="@color/colorAccent"
+            app:tabRippleColor="@color/FlatBlue"
             app:tabSelectedTextColor="@color/tabselect"></android.support.design.widget.TabLayout>
     </RelativeLayout>
 </FrameLayout>

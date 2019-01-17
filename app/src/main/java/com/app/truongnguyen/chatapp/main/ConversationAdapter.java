@@ -13,6 +13,7 @@ import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.app.truongnguyen.chatapp.widget.OnOneClickListener;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -86,13 +87,14 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             super(itemView);
             ButterKnife.bind(this, itemView);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new OnOneClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onOneClick(View v) {
                     ChattingFragment chattingFragment = new ChattingFragment(mContext, userInfo, cvsId);
                     ((MainActivity) mContext).presentFragment(chattingFragment);
                 }
             });
+
         }
 
         public void bind(Conversation cvs) {

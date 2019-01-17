@@ -2675,6 +2675,7 @@ drawable orca_emoji_category_punctuation
 drawable orca_emoji_more_back_normal
 drawable orca_emoji_more_front_normal
 drawable orca_emoji_more_front_pressed
+drawable ripple_primary_dark
 drawable round_lock_24
 drawable round_mail_outline_24
 drawable round_person_24

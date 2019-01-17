@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:background="?android:attr/selectableItemBackground"
         android:layout_marginTop="@dimen/marginTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

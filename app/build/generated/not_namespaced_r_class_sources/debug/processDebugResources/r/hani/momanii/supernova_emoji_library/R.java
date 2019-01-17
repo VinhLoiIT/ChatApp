@@ -1974,16 +1974,16 @@ public final class R {
         public static final int orca_emoji_more_back_normal = 0x7f070634;
         public static final int orca_emoji_more_front_normal = 0x7f070635;
         public static final int orca_emoji_more_front_pressed = 0x7f070636;
-        public static final int selector_emoji_activity = 0x7f07063c;
-        public static final int selector_emoji_food = 0x7f07063d;
-        public static final int selector_emoji_nature = 0x7f07063e;
-        public static final int selector_emoji_objects = 0x7f07063f;
-        public static final int selector_emoji_people = 0x7f070640;
-        public static final int selector_emoji_recent = 0x7f070641;
-        public static final int selector_emoji_symbols = 0x7f070642;
-        public static final int selector_emoji_travel = 0x7f070643;
-        public static final int smiley = 0x7f070644;
-        public static final int sym_keyboard_delete_holo_dark = 0x7f070645;
+        public static final int selector_emoji_activity = 0x7f07063d;
+        public static final int selector_emoji_food = 0x7f07063e;
+        public static final int selector_emoji_nature = 0x7f07063f;
+        public static final int selector_emoji_objects = 0x7f070640;
+        public static final int selector_emoji_people = 0x7f070641;
+        public static final int selector_emoji_recent = 0x7f070642;
+        public static final int selector_emoji_symbols = 0x7f070643;
+        public static final int selector_emoji_travel = 0x7f070644;
+        public static final int smiley = 0x7f070645;
+        public static final int sym_keyboard_delete_holo_dark = 0x7f070646;
     }
     public static final class id {
         private id() {}

@@ -10,7 +10,7 @@
         android:layout_height="?android:attr/actionBarSize"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@color/q_while">
+        android:background="@color/quitequite_while">
 
         <ImageButton
             android:id="@+id/btn_back"
@@ -19,7 +19,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
-            android:background="@color/q_while"
+            android:background="@color/quitequite_while"
             android:src="@drawable/ic_keyboard_backspace_black_24dp" />
 
         <TextView
@@ -31,6 +31,7 @@
             android:layout_marginLeft="@dimen/marginLeft"
             android:layout_toEndOf="@+id/btn_back"
             android:text="Introduction"
+            android:textColor="@color/colorBlack"
             android:textSize="25sp" />
     </RelativeLayout>
 
