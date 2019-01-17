@@ -183,12 +183,17 @@ public class ConversationsFragment extends SupportFragment {
                                 return;
                             Conversation c = documentSnapshot.toObject(Conversation.class);
 
+
+                            if (cvsList.size() >= 1 && cvsList.get(0).getId().equals(c.getId())) {
+                                cvsList.set(0, c);
+                                mAdapter.notifyItemChanged(0);
+                                return;
+                            }
                             boolean replace = false;
                             for (int i = cvsList.size() - 1; i >= 0; i--)
                                 if (cvsList.get(i).getId().equals(c.getId())) {
                                     replace = true;
-                                    cvsList.remove(i);
-                                    cvsList.add(0, c);
+                                    cvsList.set(i, c);
                                 }
                             Log.d("54321", "onEvent: CVS" +c.getId());
                             if (!replace)

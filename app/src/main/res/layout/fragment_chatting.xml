@@ -6,8 +6,6 @@
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -24,6 +22,8 @@
         android:id="@+id/chat_activity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:paddingTop="@dimen/marginTop"
         android:paddingBottom="5dp">
 
