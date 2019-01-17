@@ -63,6 +63,14 @@ public class SettingsFragment extends SupportFragment implements View.OnClickLis
                 getMainActivity().startActivity(intent);
                 getMainActivity().finish();
                 break;
+            case R.id.change_password:
+                ChangePasswordFragment changePasswordFragment = new ChangePasswordFragment();
+                getMainActivity().presentFragment(changePasswordFragment);
+                break;
+            case R.id.about_us:
+                IntroAppFragment introAppFragment = new IntroAppFragment();
+                getMainActivity().presentFragment(introAppFragment);
+                break;
         }
     }
 }

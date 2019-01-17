@@ -43,7 +43,7 @@
                 android:layout_width="53dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="@dimen/marginLeftInProfile"
-                android:src="@drawable/ic_change_password" />
+                android:src="@drawable/ic_change_password_jpg" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
                 android:layout_width="53dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="@dimen/marginLeftInProfile"
-                android:src="@drawable/ic_login_history" />
+                android:src="@drawable/ic_history_48px_512" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
                 android:layout_width="53dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="@dimen/marginLeftInProfile"
-                android:src="@drawable/ic_info_about_us" />
+                android:src="@drawable/ic_info_outline_quite_blue_24dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -137,17 +137,17 @@
 
             <ImageView
                 android:layout_width="53dp"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/marginLeftInProfile"
-                android:src="@drawable/ic_log_out" />
+                android:src="@drawable/ic_logout" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="20dp"
-                android:text="Logout"
+                android:text="Sign out"
                 android:textSize="@dimen/textSizeInSettings" />
         </LinearLayout>
 

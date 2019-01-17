@@ -16,8 +16,8 @@ import android.widget.Toast;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.MyPrefs;
 import com.app.truongnguyen.chatapp.main.LoadDataScreenActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -119,23 +119,31 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         if (validateAccount(email, password)) {
 
             disableEditing();
+            btnLogin.setText("Waiting...");
             progressBar.setVisibility(View.VISIBLE);
 
             auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                        public void onSuccess(AuthResult authResult) {
 
-                            enableEditing();
+                            //enableEditing();
+                            // progressBar.setVisibility(View.GONE);
+                            //btnLogin.setText("LOGIN");
+                            signInSuccessful();
 
-                            progressBar.setVisibility(View.GONE);
-
-                            if (task.isSuccessful()) {
-                                signInSuccessful();
-                            } else
-                                Toast.makeText(SignIn.this, R.string.failed_login, Toast.LENGTH_SHORT).show();
                         }
-                    });
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                    progressBar.setVisibility(View.GONE);
+                    btnLogin.setText("LOGIN");
+                    enableEditing();
+                    Toast.makeText(SignIn.this, R.string.failed_login, Toast.LENGTH_SHORT).show();
+
+                }
+            });
         }
     }
 
@@ -146,6 +154,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         ediPassword.setEnabled(b);
         chbRemember.setEnabled(b);
         mSignUp.setEnabled(b);
+        mSignUp.setEnabled(b);
     }
 
     private void enableEditing() {
@@ -154,6 +163,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         ediEmail.setEnabled(b);
         ediPassword.setEnabled(b);
         chbRemember.setEnabled(b);
+        mSignUp.setEnabled(b);
         mSignUp.setEnabled(b);
     }
 

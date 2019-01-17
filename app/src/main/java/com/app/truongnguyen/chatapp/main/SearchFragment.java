@@ -1,8 +1,6 @@
 package com.app.truongnguyen.chatapp.main;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,13 +18,10 @@ import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FirebaseStorage;
 
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,25 +86,7 @@ public class SearchFragment extends SupportFragment {
                     return;
 
                 List<UserInfo> userInfos = ds.toObjects(UserInfo.class);
-//                for (UserInfo u : userInfos)
-//                    if (u.getAvatarIconUri() != null) {
-//                        //Download avatarImageView
-//                        FirebaseStorage.getInstance().getReference().child(u.getAvatarUri())
-//                                .getBytes(Firebase.MAX_DONWLOAD_SIZE_BYTES)
-//                                .addOnSuccessListener(new OnSuccessListener<byte[]>() {
-//                                    @Override
-//                                    public void onSuccess(byte[] bytes) {
-//                                        ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
-//                                        Bitmap b = BitmapFactory.decodeStream(arrayInputStream);
-//
-//                                        int index = resultList.indexOf(u);
-//
-//                                        u.setAvatarBitmap(b);
-//
-//                                        adapter.notifyItemChanged(index);
-//                                    }
-//                                });
-//                    }
+
                 resultList.clear();
                 resultList.addAll(userInfos);
 

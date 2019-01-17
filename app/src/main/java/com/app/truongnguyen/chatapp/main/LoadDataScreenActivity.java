@@ -33,6 +33,7 @@ public class LoadDataScreenActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(LoadDataScreenActivity.this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
     }

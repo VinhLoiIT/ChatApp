@@ -2601,16 +2601,21 @@ drawable ic_arrow_back_white_24dp
 drawable ic_back_button
 drawable ic_camera_alt_black_24dp
 drawable ic_change_password
+drawable ic_change_password_jpg
 drawable ic_chat_black_24dp
 drawable ic_close_black_48dp
 drawable ic_contact_black_24dp
 drawable ic_face_black_24dp
+drawable ic_history_48px_512
+drawable ic_history_green
 drawable ic_info_about_us
+drawable ic_info_outline_quite_blue_24dp
 drawable ic_keyboard_backspace_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_log_out
 drawable ic_login_history
+drawable ic_logout
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -2735,6 +2740,7 @@ id bottom
 id bottomPanel
 id btn_addfriend
 id btn_back
+id btn_change
 id btn_change_avatar
 id btn_login
 id btn_save
@@ -2767,6 +2773,8 @@ id content
 id contentPanel
 id conversation_name
 id coordinator
+id current_password_edittextinput
+id current_password_textinput
 id custom
 id customPanel
 id cvs_avatar
@@ -2875,6 +2883,8 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id navigation_header_container
 id never
+id new_password_edittextinput
+id new_password_textinput
 id none
 id normal
 id notification_background
@@ -2891,6 +2901,7 @@ id percent
 id pin
 id progress_circular
 id progress_horizontal
+id progressbar
 id rad_female
 id rad_group_gender
 id rad_male
@@ -2900,6 +2911,8 @@ id remoteUser
 id remoteUserAvatar
 id remoteVideo
 id repeat
+id retype_new_password_edittextinput
+id retype_new_password_textinput
 id right
 id right_icon
 id right_side
@@ -3069,9 +3082,11 @@ layout design_text_input_password_icon
 layout emojicon_grid
 layout emojicon_item
 layout emojicons
+layout fragment_change_password
 layout fragment_chatting
 layout fragment_contacts
 layout fragment_conversations
+layout fragment_intro_app
 layout fragment_search
 layout fragment_settings
 layout fragment_view_profile
