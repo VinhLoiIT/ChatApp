@@ -1,10 +1,12 @@
 package com.app.truongnguyen.chatapp.main;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
@@ -17,17 +19,23 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.truongnguyen.chatapp.EventClass.Signal;
+import com.app.truongnguyen.chatapp.EventClass.DataIsChanged;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.widget.BitmapCustom;
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -70,7 +78,7 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
     Button btnSave;
 
     @BindView(R.id.avatar)
-    RoundedImageView avatar;
+    RoundedImageView avatarImageView;
     @BindView(R.id.btn_change_avatar)
     ImageView btnChangeAvatar;
     @BindView(R.id.tv_user_name)
@@ -86,10 +94,13 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
         ButterKnife.bind(this);
 
         btnChangeAvatar.setOnClickListener(this);
-        avatar.setOnClickListener(this);
-        tvName.setText(firebase.getUserData().getUserName());
-        //firebase.setAvatarFor(avatar);
-        avatar.setImageBitmap(firebase.getAvatar());
+        avatarImageView.setOnClickListener(this);
+
+        tvName.setText(firebase.getCurrentUser().getUserName());
+
+        String avatarUrl = firebase.getmCurrentUser().getAvatarUrl();
+        if (avatarUrl != null)
+            Glide.with(this).load(avatarUrl).into(avatarImageView);
     }
 
     @Override
@@ -97,29 +108,16 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.avatar:
                 Intent intent = new Intent(MyProfileActivity.this, ViewImageActivity.class);
+
                 Bundle bundle = new Bundle();
-
-                Bitmap bitmap = firebase.getAvatar();
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-                byte[] imageInByte = stream.toByteArray();
-                ByteArrayInputStream bis = new ByteArrayInputStream(imageInByte);
-
-                bundle.putByteArray("image", imageInByte);
-
+                bundle.putString("imageUrl", firebase.getCurrentUser().getAvatarUrl());
                 intent.putExtras(bundle);
+
                 startActivity(intent);
                 break;
             case R.id.btn_change_avatar:
                 chooseImage();
                 break;
-        }
-    }
-
-    public void setAvatar() {
-        Bitmap b = firebase.getAvatar();
-        if (b != null) {
-            avatar.setImageBitmap(b);
         }
     }
 
@@ -130,8 +128,96 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
-    private void uploadAvatar(Bitmap bitmap) {
-        firebase.uploadAvatar(bitmap, this);
+    private void uploadAvatarAndAvatarCurrent(Bitmap avatar, Bitmap avatarIcon) {
+        String uId = firebase.getUid();
+        String destPath_avatarIcon = uId + "/avatarIcon";
+        String destPath_avatar = uId + "/avatar";
+        String fieldAvatarIconUri = "avatarIconUri";
+        String fieldAvatarUri = "avatarUri";
+        String fieldAvatarIconUrl = "avatarIconUrl";
+        String fieldAvatarUrl = "avatarUrl";
+
+        if (avatar != null || avatarIcon != null) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            avatarIcon.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] dataAvatarIcon = baos.toByteArray();
+
+            baos.reset();
+            avatar.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] dataAvatar = baos.toByteArray();
+
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle("Uploading...");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            StorageReference ref = FirebaseStorage.getInstance().getReference();
+
+            //Start uploading
+            ref.child(destPath_avatarIcon).putBytes(dataAvatarIcon)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                            //update avatarUri
+                            firebase.getCurrentUserFolderDbs()
+                                    .update(fieldAvatarIconUri, destPath_avatarIcon);
+
+                            //update avatar icon Url
+                            ref.child(destPath_avatarIcon).getDownloadUrl()
+                                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+                                            firebase.getCurrentUserFolderDbs()
+                                                    .update(fieldAvatarIconUrl, uri.toString());
+                                        }
+                                    });
+
+
+                            //setAvatar
+                            avatarImageView.setImageBitmap(avatar);
+
+                            //upload avatar
+                            ref.child(destPath_avatar).putBytes(dataAvatar)
+                                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                            //update avatar uri
+                                            firebase.getCurrentUserFolderDbs()
+                                                    .update(fieldAvatarUri, destPath_avatar);
+
+                                            //update avatarc icon Url
+                                            ref.child(destPath_avatar).getDownloadUrl()
+                                                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                        @Override
+                                                        public void onSuccess(Uri uri) {
+                                                            firebase.getCurrentUserFolderDbs()
+                                                                    .update(fieldAvatarUrl, uri.toString());
+                                                        }
+                                                    });
+                                            avatarImageView.setImageBitmap(avatar);
+                                        }
+                                    });
+
+                            progressDialog.dismiss();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
+                            Toast.makeText(MyProfileActivity.this, "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot
+                                    .getTotalByteCount());
+                            progressDialog.setMessage("Uploaded " + (int) progress + "%");
+                        }
+                    });
+        }
     }
 
     @Override
@@ -141,16 +227,19 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
                 && data != null && data.getData() != null) {
             filePath = data.getData();
             try {
-                Bitmap image = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                //image = ImageUtils.getInstant().getCompressedBitmap(filePath.toString());
-                //Bitmap bitmap = BitmapCustom.myScaleAndCrop(image, 128, 128);
-                if (image != null) {
-                    image = BitmapCustom.myScaleAndCrop(image, 256, 256);
+                Bitmap avatar = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                if (avatar != null) {
+                    Bitmap avatarIcon = BitmapCustom.myScaleAndCrop(avatar, 32, 32);
+                    avatar = BitmapCustom.myScaleAndCrop(avatar, 512, 512);
 
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    image.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+                    avatar.compress(Bitmap.CompressFormat.JPEG, 90, stream);
 
-                    uploadAvatar(image);
+                    stream.reset();
+                    avatarIcon.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+
+                    uploadAvatarAndAvatarCurrent(avatar, avatarIcon);
+
                 } else Toast.makeText(this, "Wooo...\n" +
                         "Error when loading this image!!", Toast.LENGTH_SHORT).show();
 
@@ -174,8 +263,8 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void avatarWasChanged(Signal data) {
-        setAvatar();
+    public void avatarWasChanged(DataIsChanged data) {
+
     }
 
 }

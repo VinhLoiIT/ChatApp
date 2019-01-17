@@ -2,7 +2,6 @@ package com.app.truongnguyen.chatapp.main;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,12 +14,15 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.app.truongnguyen.chatapp.EventClass.EmptyObjectEvent;
-import com.app.truongnguyen.chatapp.EventClass.Signal;
+import com.app.truongnguyen.chatapp.EventClass.DataIsChanged;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
+import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -36,19 +38,24 @@ import butterknife.ButterKnife;
 
 public class ConversationsFragment extends SupportFragment implements View.OnClickListener {
     @BindView(R.id.avatar)
-    RoundedImageView avatar;
+    RoundedImageView avatarImageView;
+
     @BindView(R.id.search_bar)
     RelativeLayout searchBar;
+
     @BindView(R.id.swipe_layout)
     SwipeRefreshLayout swipeLayout;
+
     @BindView(R.id.messError)
     TextView mErrorTextView;
+
     @BindView(R.id.list_of_conversation)
     RecyclerView mRecyclerView;
 
     private ConversationAdapter mAdapter;
     private Context mContext;
-    private ArrayList<Conversation> conversationArrayList;
+    private ArrayList<Conversation> cvsList;
+    private ArrayList<String> mCvsIdList;
     private Firebase firebase = Firebase.getInstance();
 
     public static ConversationsFragment newInstance() {
@@ -68,15 +75,16 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
 
         mContext = getMainActivity();
 
+        setAvatar(true);
 
-        setAvatar();
         searchBar.setOnClickListener(this);
-        avatar.setOnClickListener(this);
+        avatarImageView.setOnClickListener(this);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
-        conversationArrayList = new ArrayList<>();
-        mAdapter = new ConversationAdapter(getActivity(), conversationArrayList);
+        cvsList = new ArrayList<>();
+        mCvsIdList = new ArrayList<>();
+        mAdapter = new ConversationAdapter(getActivity(), cvsList);
         mRecyclerView.setAdapter(mAdapter);
         swipeLayout.setOnRefreshListener(this::refreshData);
 
@@ -85,9 +93,13 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
 
     public void refreshData() {
         swipeLayout.setRefreshing(true);
-        firebase.getConversation();
+        setAvatar(true);
+        getConversations();
     }
 
+    public void refreshFinish() {
+        swipeLayout.setRefreshing(false);
+    }
 
     @Override
     public void onStart() {
@@ -102,62 +114,91 @@ public class ConversationsFragment extends SupportFragment implements View.OnCli
     }
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void emptyConversation(EmptyObjectEvent data) {
-        EmptyObjectEvent stickyEvent = EventBus.getDefault().removeStickyEvent(EmptyObjectEvent.class);
-        if (swipeLayout.isRefreshing())
-            swipeLayout.setRefreshing(false);
+    public void dataIsChanged(DataIsChanged dataIsChanged) {
+        DataIsChanged stickyEvent = EventBus.getDefault().removeStickyEvent(DataIsChanged.class);
+        setAvatar(dataIsChanged.isAvatarIsChanged());
+        getConversations();
     }
 
-    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void avatarWasChanged(Signal data) {
-        setAvatar();
-    }
 
-    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void getConversationEvent(Conversation data) {
-        Conversation stickyEvent = EventBus.getDefault().removeStickyEvent(Conversation.class);
+    private void getConversations() {
 
-        if (stickyEvent != null) {
-            if (conversationArrayList.isEmpty())
-                conversationArrayList.add(stickyEvent);
-            else {
-                boolean same = false;
-                for (Conversation c : this.conversationArrayList)
-                    if (c.getId().equals(stickyEvent.getId())) {
-                        conversationArrayList.remove(c);
-                        conversationArrayList.add(stickyEvent);
-                        same = true;
-                        break;
-                    }
-                if (!same)
-                    conversationArrayList.add(stickyEvent);
+        if (firebase.getmCurrentUser() == null) {
+            refreshFinish();
+            return;
+        }
+
+        ArrayList<String> cvsIdList = firebase.getmCurrentUser().getConversationsId();
+        if (cvsIdList == null || cvsIdList.equals(mCvsIdList)) {
+            if (cvsIdList == null) {
+                cvsList.clear();
+                mCvsIdList.clear();
+                mAdapter.notifyDataSetChanged();
             }
-
-            Collections.sort(conversationArrayList, new Comparator<Conversation>() {
-                @Override
-                public int compare(Conversation o2, Conversation o1) {
-                    long t1 = o1.getLastMessage().getTimeStamp();
-                    long t2 = o2.getLastMessage().getTimeStamp();
-                    if (t1 > t2)
-                        return 1;
-                    else if (t1 == t2)
-                        return 0;
-                    return -1;
-                }
-            });
-            // Log.d("1234567", "sizeArray: " + conversationArrayList.size() + "getConversationEvent: " + stickyEvent.toString());
-            mAdapter.notifyDataSetChanged();
-
-            if (swipeLayout.isRefreshing())
-                swipeLayout.setRefreshing(false);
+            refreshFinish();
+            return;
         }
+
+        cvsList.clear();
+        mCvsIdList.clear();
+
+        mCvsIdList = (ArrayList<String>) cvsIdList.clone();
+
+        //Get Conversation
+        for (String cvsId : cvsIdList) {
+            firebase.getCvsDocWithId(cvsId)
+                    .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                        @Override
+                        public void onEvent(@javax.annotation.Nullable DocumentSnapshot documentSnapshot
+                                , @javax.annotation.Nullable FirebaseFirestoreException e) {
+
+                            if (documentSnapshot == null || !documentSnapshot.exists())
+                                return;
+                            Conversation c = documentSnapshot.toObject(Conversation.class);
+
+                            boolean replace = false;
+                            for (int i = cvsList.size() - 1; i >= 0; i--)
+                                if (cvsList.get(i).getId().equals(c.getId())) {
+                                    replace = true;
+                                    cvsList.remove(i);
+                                    cvsList.add(0, c);
+                                }
+
+                            if (!replace)
+                                cvsList.add(0, c);
+                            sortCvsList();
+                            mAdapter.notifyDataSetChanged();
+                        }
+                    });
+        }
+        refreshFinish();
     }
 
-    public void setAvatar() {
-        Bitmap b = firebase.getAvatar();
-        if (b != null) {
-            avatar.setImageBitmap(b);
-        }
+    private void sortCvsList() {
+        //newest conversation
+        Collections.sort(cvsList, new Comparator<Conversation>() {
+            @Override
+            public int compare(Conversation o2, Conversation o1) {
+                long t1 = o1.getLastMessage().getTimeStamp();
+                long t2 = o2.getLastMessage().getTimeStamp();
+                if (t1 > t2)
+                    return 1;
+                else if (t1 == t2)
+                    return 0;
+                return -1;
+            }
+        });
+    }
+
+
+    public void setAvatar(boolean avatarIsChanged) {
+        if (!avatarIsChanged)
+            return;
+        if (firebase.getmCurrentUser() == null)
+            return;
+        String url = firebase.getmCurrentUser().getAvatarIconUrl();
+        if (url != null)
+            Glide.with(mContext).load(url).into(avatarImageView);
     }
 
     @Override

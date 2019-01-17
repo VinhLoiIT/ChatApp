@@ -2594,6 +2594,7 @@ drawable emoji_travel_focus
 drawable emoji_x
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ht
 drawable ic_action_keyboard
 drawable ic_action_send_now
 drawable ic_arrow_back_white_24dp
@@ -2789,6 +2790,7 @@ id edi_password
 id edi_phonenumber
 id edi_retype_password
 id edit_query
+id edit_text_msg
 id emoji_button
 id emojicon_icon
 id emojis_backspace
@@ -2834,7 +2836,6 @@ id image
 id info
 id input_birthday
 id input_email
-id input_mess
 id input_name
 id input_password
 id input_retype_password
@@ -2958,6 +2959,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id text_input_msg
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -3045,6 +3047,7 @@ layout abc_tooltip
 layout activity_call_screen
 layout activity_forgot_password
 layout activity_incoming_call_screen
+layout activity_load_data_screen
 layout activity_main
 layout activity_my_profile
 layout activity_view_image

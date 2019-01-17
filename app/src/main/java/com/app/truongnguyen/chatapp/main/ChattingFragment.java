@@ -1,6 +1,7 @@
 package com.app.truongnguyen.chatapp.main;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,9 +9,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,12 +31,16 @@ import com.app.truongnguyen.chatapp.EventClass.ListMessageEvent;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.call.CallScreenActivity;
 import com.app.truongnguyen.chatapp.call.SinchService;
+import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.Message;
+import com.app.truongnguyen.chatapp.data.UserInfo;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.sinch.android.rtc.calling.Call;
 
 import org.greenrobot.eventbus.EventBus;
@@ -38,41 +48,44 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import hani.momanii.supernova_emoji_library.Actions.EmojIconActions;
-import hani.momanii.supernova_emoji_library.Helper.EmojiconEditText;
 
+@SuppressLint("ValidFragment")
 public class ChattingFragment extends SupportFragment {
     private static final int RC_CHECK_PERMISSION = 100;
 
-    @BindView(R.id.input_mess)
-    EmojiconEditText inputMsg;
-    @BindView(R.id.emoji_button)
-    ImageView emojiButton;
+    @BindView(R.id.text_input_msg)
+    TextInputLayout textInputMsg;
+
+    @BindView(R.id.edit_text_msg)
+    TextInputEditText editTextMsg;
+
     @BindView(R.id.btn_send_mess)
     ImageView btnSendMess;
+
     @BindView(R.id.list_of_message)
     ListView listView;
+
     @BindView(R.id.chatToolbar)
     Toolbar chatToolbar;
 
-    private EmojIconActions emojIconActions;
-    private String cvsId = null;
-    private String otherId;
     private Firebase firebase = Firebase.getInstance();
-    private String uId;
-    private ArrayList<Message> messageArrayList;
+    private ArrayList<Message> messageList;
     private MessageAdapter adapter;
     private Context mconContext;
-    private String hisName;
+    private UserInfo hisInfo;
+    private String cvsId;
 
-    public static ChattingFragment newInstance() {
-        return new ChattingFragment();
+    public ChattingFragment(Context mconContext, UserInfo hisInfo, String cvsId) {
+        this.mconContext = mconContext;
+        this.hisInfo = hisInfo;
+        this.cvsId = cvsId;
     }
 
     @Nullable
@@ -87,31 +100,10 @@ public class ChattingFragment extends SupportFragment {
         ButterKnife.bind(this, view);
 
         mconContext = getMainActivity();
-        uId = firebase.getUid();
 
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            if (bundle.containsKey("otherId"))
-                otherId = bundle.getString("otherId");
-            else if (bundle.containsKey("cvsId")) {
-                cvsId = bundle.getString("cvsId");
-                hisName = bundle.getString("hisName");
-                //Calculate otherId from cvsId
-                otherId = firebase.getUId2FromCvsId(cvsId, uId);
-
-                //Get messages by EventBus
-                firebase.getMessages(cvsId);
-            }
-        }
-
-        messageArrayList = new ArrayList<>();
-        adapter = new MessageAdapter(mconContext, R.layout.left_message_item, messageArrayList, uId);
+        messageList = new ArrayList<>();
+        adapter = new MessageAdapter(mconContext, R.layout.left_message_item, messageList);
         listView.setAdapter(adapter);
-
-
-        emojIconActions = new EmojIconActions(getMainActivity().getApplicationContext(), listView, inputMsg, emojiButton);
-        emojIconActions.ShowEmojIcon();
-
 
         btnSendMess.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,18 +112,36 @@ public class ChattingFragment extends SupportFragment {
             }
         });
 
+        btnSendMess.setVisibility(View.GONE);
+
+        editTextMsg.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!editTextMsg.getText().toString().trim().equals(""))
+                    btnSendMess.setVisibility(View.VISIBLE);
+                else
+                    btnSendMess.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
         if (cvsId == null) {
-            String tempCvsId = firebase.makeCvsId(uId, otherId);
-            FirebaseFirestore.getInstance().collection("conversations").document(tempCvsId).get()
-                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            if (documentSnapshot.exists()) {
-                                cvsId = tempCvsId;
-                                firebase.getMessages(cvsId);
-                            }
-                        }
-                    });
+            String tempCvsId = firebase.makeCvsId(firebase.getUid(), hisInfo.getId());
+            if (firebase.getmCurrentUser() != null &&
+                    firebase.getmCurrentUser().getConversationsId() != null
+                    && firebase.getmCurrentUser().getConversationsId().contains(tempCvsId)) {
+                cvsId = tempCvsId;
+                getMessages();
+            }
         }
 
         setupToolbar();
@@ -140,7 +150,7 @@ public class ChattingFragment extends SupportFragment {
     private void setupToolbar() {
         getMainActivity().setSupportActionBar(chatToolbar);
 
-        chatToolbar.setTitle(hisName);
+        chatToolbar.setTitle(hisInfo.getUserName());
         setHasOptionsMenu(true);
     }
 
@@ -156,45 +166,118 @@ public class ChattingFragment extends SupportFragment {
         EventBus.getDefault().unregister(this);
     }
 
+    public void getMessages() {
+        Log.d("1234567", "getMessages: ");
+        firebase.getCvsDocWithId(cvsId)
+                .collection(Firebase.MESSAGES_FOLDER)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                        if (e != null) {
+                            Log.w("", "Listen failed.", e);
+                            return;
+                        }
+
+                        List<Message> data = queryDocumentSnapshots.toObjects(Message.class);
+
+                        messageList.clear();
+                        messageList.addAll(data);
+
+                        Collections.sort(messageList, new Comparator<Message>() {
+                            @Override
+                            public int compare(Message o1, Message o2) {
+                                if (o1.getTimeStamp() > o2.getTimeStamp())
+                                    return 1;
+                                else if (o1.getTimeStamp() == o2.getTimeStamp())
+                                    return 0;
+                                return -1;
+                            }
+                        });
+
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+    }
+
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void getMessagesEvent(ListMessageEvent data) {
-        ListMessageEvent stickyEvent = EventBus.getDefault().removeStickyEvent(ListMessageEvent.class);
-
-        if (stickyEvent != null) {
-
-            messageArrayList.clear();
-            messageArrayList.addAll(stickyEvent.getMessageList());
-
-            Collections.sort(messageArrayList, new Comparator<Message>() {
-                @Override
-                public int compare(Message o1, Message o2) {
-                    if (o1.getTimeStamp() > o2.getTimeStamp())
-                        return 1;
-                    else if (o1.getTimeStamp() == o2.getTimeStamp())
-                        return 0;
-                    return -1;
-                }
-            });
-
-            adapter.notifyDataSetChanged();
-        }
+    public void dataIsChanged(ListMessageEvent data) {
+        getMessages();
     }
 
     private void sendMsg() {
-        String content = inputMsg.getText().toString().trim();
+        String content = editTextMsg.getText().toString().trim();
         if (content.equals(""))
             return;
 
         //conversation doesn't exists
         if (cvsId == null) {
-            cvsId = firebase.makeCvsId(uId, otherId);
+            cvsId = firebase.makeCvsId(firebase.getUid(), hisInfo.getId());
 
-            firebase.createCvsWithAMsg(cvsId, uId, otherId, content);
+            createCvsWithAMsg(cvsId, firebase.getUid(), hisInfo.getId(), content);
         } else
-            firebase.sendMess(cvsId, uId, content);
+            sendMsg(cvsId, firebase.getUid(), content);
 
-        inputMsg.setText("");
-        inputMsg.requestFocus();
+        editTextMsg.setText("");
+        editTextMsg.requestFocus();
+    }
+
+    public void sendMsg(String cvsId, String senderId, String content) {
+
+        //make message ID
+        String msgID = firebase.getMessageFolderDoc(cvsId).document().getId();
+
+        Message m = new Message(msgID, senderId, "text", content, Calendar.getInstance().getTime().getTime());
+
+        firebase.getMessageIdDocWithId(cvsId, msgID).set(m);
+
+        firebase.getCvsDocWithId(cvsId)
+                .update("lastMessage.sender", senderId,
+                        "lastMessage.type", "text",
+                        "lastMessage.id", msgID,
+                        "lastMessage.content", content,
+                        "lastMessage.timeStamp", m.getTimeStamp());
+    }
+
+    public void createCvsWithAMsg(String cvsId, String sender, String receiver, String content) {
+
+        textInputMsg.setVisibility(View.GONE);
+
+        ArrayList<String> usersId = new ArrayList<>();
+        usersId.add(sender);
+        usersId.add(receiver);
+        Conversation c = new Conversation();
+        c.setId(cvsId);
+        c.setUserId(usersId);
+        c.setLastMessage(new Message(cvsId, sender, "text", content
+                , Calendar.getInstance().getTime().getTime()));
+
+        firebase.getCvsDocWithId(cvsId).set(c)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        firebase.getUserIdFolderDbs(sender)
+                                .update("conversationsId", FieldValue.arrayUnion(cvsId))
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+
+                                        firebase.getUserIdFolderDbs(receiver)
+                                                .update("conversationsId", FieldValue.arrayUnion(cvsId))
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        textInputMsg.setVisibility(View.VISIBLE);
+                                                        sendMsg(cvsId, sender, content);
+                                                        getMessages();
+                                                    }
+                                                });
+                                    }
+                                });
+
+                    }
+                });
+        //Todo: Handler error not sendding message
     }
 
     @Override
@@ -252,7 +335,7 @@ public class ChattingFragment extends SupportFragment {
     }
 
     private void makeVideoCall() {
-        Call call = getMainActivity().getSinchServiceInterface().callUserVideo(otherId);
+        Call call = getMainActivity().getSinchServiceInterface().callUserVideo(hisInfo.getId());
         Intent intent = new Intent(getActivity(), CallScreenActivity.class);
         String callID = call.getCallId();
         intent.putExtra(SinchService.CALL_ID, call.getCallId());

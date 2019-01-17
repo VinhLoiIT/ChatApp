@@ -13,6 +13,43 @@ public class User {
     @SerializedName("avatarUri")
     @Expose
     private String avatarUri;
+
+    @SerializedName("avatarIconUri")
+    @Expose
+    private String avatarIconUri;
+    @SerializedName("avatarIconUrl")
+    @Expose
+    private String avatarIconUrl;
+    @SerializedName("avatarUrl")
+    @Expose
+    private String avatarUrl;
+
+    public String getAvatarIconUrl() {
+        return avatarIconUrl;
+    }
+
+    public void setAvatarIconUrl(String avatarIconUrl) {
+
+        this.avatarIconUrl = avatarIconUrl;
+    }
+
+    public String getAvatarUrl() {
+
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public String getAvatarIconUri() {
+
+        return avatarIconUri;
+    }
+
+    public void setAvatarIconUri(String avatarIconUri) {
+        this.avatarIconUri = avatarIconUri;
+    }
     @SerializedName("gender")
     @Expose
     private String gender;

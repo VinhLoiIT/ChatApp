@@ -20,7 +20,7 @@ public class ViewProfileFragment_ViewBinding implements Unbinder {
   public ViewProfileFragment_ViewBinding(ViewProfileFragment target, View source) {
     this.target = target;
 
-    target.avatar = Utils.findRequiredViewAsType(source, R.id.avatar, "field 'avatar'", RoundedImageView.class);
+    target.avatarImageView = Utils.findRequiredViewAsType(source, R.id.avatar, "field 'avatarImageView'", RoundedImageView.class);
     target.tvName = Utils.findRequiredViewAsType(source, R.id.tv_user_name, "field 'tvName'", TextView.class);
     target.btnAddFrienf = Utils.findRequiredViewAsType(source, R.id.btn_addfriend, "field 'btnAddFrienf'", Button.class);
     target.btnToChat = Utils.findRequiredViewAsType(source, R.id.btn_to_chat, "field 'btnToChat'", Button.class);
@@ -33,7 +33,7 @@ public class ViewProfileFragment_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
-    target.avatar = null;
+    target.avatarImageView = null;
     target.tvName = null;
     target.btnAddFrienf = null;
     target.btnToChat = null;

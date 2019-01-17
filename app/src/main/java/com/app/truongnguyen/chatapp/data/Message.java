@@ -33,7 +33,7 @@ public class Message {
     public Message() {
     }
 
-    public Message(String sender, String id, String type, String content, long timeStamp) {
+    public Message(String id, String sender, String type, String content, long timeStamp) {
         this.sender = sender;
         this.id = id;
         this.type = type;

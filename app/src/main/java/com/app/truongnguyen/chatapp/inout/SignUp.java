@@ -19,10 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.MyPrefs;
 import com.app.truongnguyen.chatapp.data.User;
 import com.app.truongnguyen.chatapp.main.MainActivity;
-import com.app.truongnguyen.chatapp.main.SettingsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -160,13 +160,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 .set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                progressDialog.dismiss();
-
-                Toast.makeText(SignUp.this, R.string.signup_success, Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(SignUp.this, MainActivity.class);
-                finish();
-                startActivity(intent);
+                signupSuccessfully(user);
             }
         })
                 .addOnFailureListener(new OnFailureListener() {
@@ -307,5 +301,17 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         txtConfirm.setSelected(true);
     }
 
+    public void signupSuccessfully(User user) {
+        progressDialog.dismiss();
+
+        Toast.makeText(SignUp.this, R.string.signup_success, Toast.LENGTH_SHORT).show();
+
+        Firebase.getInstance().setmCurrentUser(user);
+        Intent intent = new Intent(SignUp.this, MainActivity.class);
+
+        finish();
+
+        startActivity(intent);
+    }
 
 }

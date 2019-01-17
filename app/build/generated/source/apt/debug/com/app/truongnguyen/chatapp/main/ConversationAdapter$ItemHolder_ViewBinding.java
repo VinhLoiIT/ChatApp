@@ -23,7 +23,7 @@ public class ConversationAdapter$ItemHolder_ViewBinding implements Unbinder {
     target.cvsName = Utils.findRequiredViewAsType(source, R.id.conversation_name, "field 'cvsName'", TextView.class);
     target.messContent = Utils.findRequiredViewAsType(source, R.id.last_message_content, "field 'messContent'", TextView.class);
     target.messTime = Utils.findRequiredViewAsType(source, R.id.last_message_time, "field 'messTime'", TextView.class);
-    target.icon = Utils.findRequiredViewAsType(source, R.id.cvs_avatar, "field 'icon'", RoundedImageView.class);
+    target.cvsIcon = Utils.findRequiredViewAsType(source, R.id.cvs_avatar, "field 'cvsIcon'", RoundedImageView.class);
   }
 
   @Override
@@ -36,6 +36,6 @@ public class ConversationAdapter$ItemHolder_ViewBinding implements Unbinder {
     target.cvsName = null;
     target.messContent = null;
     target.messTime = null;
-    target.icon = null;
+    target.cvsIcon = null;
   }
 }

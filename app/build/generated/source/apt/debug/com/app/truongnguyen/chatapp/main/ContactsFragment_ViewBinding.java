@@ -22,7 +22,7 @@ public class ContactsFragment_ViewBinding implements Unbinder {
   public ContactsFragment_ViewBinding(ContactsFragment target, View source) {
     this.target = target;
 
-    target.avatar = Utils.findRequiredViewAsType(source, R.id.avatar, "field 'avatar'", RoundedImageView.class);
+    target.avatarImageView = Utils.findRequiredViewAsType(source, R.id.avatar, "field 'avatarImageView'", RoundedImageView.class);
     target.searchBar = Utils.findRequiredViewAsType(source, R.id.search_bar, "field 'searchBar'", RelativeLayout.class);
     target.swipeLayout = Utils.findRequiredViewAsType(source, R.id.swipe_layout, "field 'swipeLayout'", SwipeRefreshLayout.class);
     target.mErrorTextView = Utils.findRequiredViewAsType(source, R.id.messError, "field 'mErrorTextView'", TextView.class);
@@ -36,7 +36,7 @@ public class ContactsFragment_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
-    target.avatar = null;
+    target.avatarImageView = null;
     target.searchBar = null;
     target.swipeLayout = null;
     target.mErrorTextView = null;

@@ -20,6 +20,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="@dimen/avatar_width"
                 android:layout_height="@dimen/avatar_height"
+                android:layout_alignParentStart="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:scaleType="fitCenter"
@@ -38,12 +39,10 @@
                 android:id="@+id/btn_change_avatar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="161dp"
-                android:layout_marginTop="164dp"
-                android:layout_marginBottom="22dp"
+                android:layout_below="@+id/avatar"
+                android:layout_alignEnd="@+id/avatar"
+                android:layout_marginTop="-30dp"
+                android:layout_marginEnd="0dp"
                 android:src="@drawable/ic_camera_alt_black_24dp" />
         </RelativeLayout>
     <TextView

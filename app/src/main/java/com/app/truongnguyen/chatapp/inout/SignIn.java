@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.MyPrefs;
-import com.app.truongnguyen.chatapp.main.MainActivity;
+import com.app.truongnguyen.chatapp.main.LoadDataScreenActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -194,7 +194,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void signInSuccessful() {
-        Intent intent = new Intent(SignIn.this, MainActivity.class);
+        Intent intent = new Intent(SignIn.this, LoadDataScreenActivity.class);
         startActivity(intent);
         finish();
     }

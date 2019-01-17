@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/hoailuong/Desktop/git/ChatApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+            "outputFile": "C:\\Users\\TRUONG NGUYEN\\Desktop\\ChatApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
             "map": [
                 {
-                    "source": "/home/hoailuong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/7938af68cf6f32b72eaf2412daa00009/res/values-v18/values-v18.xml",
+                    "source": "C:\\Users\\TRUONG NGUYEN\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b5c4ce0bf70ccf3fbd36cda86e20c3ab\\res\\values-v18\\values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

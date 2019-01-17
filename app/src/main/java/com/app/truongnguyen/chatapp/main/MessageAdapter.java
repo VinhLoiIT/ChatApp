@@ -12,25 +12,21 @@ import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.Common;
 import com.app.truongnguyen.chatapp.R;
+import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.Message;
 import com.github.library.bubbleview.BubbleTextView;
 
 import java.util.ArrayList;
 
 public class MessageAdapter extends ArrayAdapter<Message> {
-    private String userId;
     private ArrayList<Message> messageArrayList;
     private Context context;
+    private Firebase firebase = Firebase.getInstance();
 
-    public MessageAdapter(@NonNull Context context, int resource, ArrayList<Message> objects, String userId) {
+    public MessageAdapter(@NonNull Context context, int resource, ArrayList<Message> objects) {
         super(context, resource, objects);
         this.context = context;
         this.messageArrayList = objects;
-        this.userId = userId;
-    }
-
-    public void setMessageArrayList(ArrayList<Message> messageArrayList) {
-        this.messageArrayList = messageArrayList;
     }
 
     @NonNull
@@ -42,7 +38,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
 
         Message message = messageArrayList.get(position);
 
-        if (message.getSender().equals(userId))
+        if (message.getSender().equals(firebase.getUid()))
             layoutResource = R.layout.right_message_item;
         else
             layoutResource = R.layout.left_message_item;

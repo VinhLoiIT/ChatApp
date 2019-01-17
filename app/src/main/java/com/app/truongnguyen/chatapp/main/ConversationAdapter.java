@@ -1,8 +1,6 @@
 package com.app.truongnguyen.chatapp.main;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +12,10 @@ import com.app.truongnguyen.chatapp.Common;
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Conversation;
 import com.app.truongnguyen.chatapp.data.Firebase;
+import com.app.truongnguyen.chatapp.data.UserInfo;
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ import butterknife.ButterKnife;
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapter.ItemHolder> {
     Context mContext;
     private ArrayList<Conversation> mData;
+    private Firebase firebase = Firebase.getInstance();
+
 
     public ConversationAdapter(Context context, ArrayList<Conversation> data) {
         mData = data;
@@ -73,11 +77,10 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
         @BindView(R.id.last_message_time)
         TextView messTime;
         @BindView(R.id.cvs_avatar)
-        RoundedImageView icon;
+        RoundedImageView cvsIcon;
 
-        private String cvsId;
-        private String hisName;
-        private Bitmap iconBitmap = null;
+        UserInfo userInfo;
+        String cvsId;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
@@ -86,27 +89,37 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ChattingFragment chattingFragment = ChattingFragment.newInstance();
-
-                    Bundle bundle = new Bundle();
-                    bundle.putString("cvsId", cvsId);
-                    bundle.putString("hisName", hisName);
-                    chattingFragment.setArguments(bundle);
+                    ChattingFragment chattingFragment = new ChattingFragment(mContext, userInfo, cvsId);
                     ((MainActivity) mContext).presentFragment(chattingFragment);
                 }
             });
         }
 
         public void bind(Conversation cvs) {
-            this.cvsId = cvs.getId();
-            this.hisName = cvs.getConversationName();
-            iconBitmap = cvs.getIcon();
 
-            if (iconBitmap != null)
-                icon.setImageBitmap(iconBitmap);
+            String hisId = firebase.getOtherIdFromCvsId(cvs.getId());
 
+            //get his name and his avatarImageView icon
+            firebase.getUserIdFolderDbs(hisId).get()
+                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot doc) {
+
+                            if (doc == null || !doc.exists())
+                                return;
+                            userInfo = doc.toObject(UserInfo.class);
+
+                            cvsName.setText(userInfo.getUserName());
+
+                            String avtarIconUrl = userInfo.getAvatarIconUrl();
+                            if (avtarIconUrl != null)
+                                Glide.with(mContext).load(avtarIconUrl).into(cvsIcon);
+                        }
+                    });
+
+            //set Sender
             String sender = "";
-            if (Firebase.getInstance().getUid().equals(cvs.getLastMessage().getSender()))
+            if (firebase.getUid().equals(cvs.getLastMessage().getSender()))
                 sender = "You: ";
             messContent.setText(sender + cvs.getLastMessage().getContent());
 

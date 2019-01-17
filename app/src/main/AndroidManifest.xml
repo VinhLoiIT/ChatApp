@@ -34,6 +34,7 @@
         <activity android:name=".main.MyProfileActivity"></activity>
         <activity android:name=".inout.ForgotPassword"></activity>
         <activity android:name=".main.ViewImageActivity"></activity>
+        <activity android:name=".main.LoadDataScreenActivity"></activity>
     </application>
 
 </manifest>

@@ -45,6 +45,7 @@
         <activity android:name="com.app.truongnguyen.chatapp.main.MyProfileActivity" />
         <activity android:name="com.app.truongnguyen.chatapp.inout.ForgotPassword" />
         <activity android:name="com.app.truongnguyen.chatapp.main.ViewImageActivity" />
+        <activity android:name="com.app.truongnguyen.chatapp.main.LoadDataScreenActivity" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

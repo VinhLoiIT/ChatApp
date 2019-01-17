@@ -21,6 +21,8 @@ import com.app.truongnguyen.chatapp.data.Firebase;
 import com.app.truongnguyen.chatapp.data.UserInfo;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 
@@ -34,8 +36,10 @@ import butterknife.ButterKnife;
 public class SearchFragment extends SupportFragment {
     @BindView(R.id.input_search)
     EditText input;
+
     @BindView(R.id.btn_back)
     ImageButton back;
+
     @BindView(R.id.list_people_result)
     RecyclerView recyclerView;
 
@@ -79,39 +83,42 @@ public class SearchFragment extends SupportFragment {
             }
         });
 
-        firebase.getUserFolderDbs().get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        firebase.getUserFolderDbs().addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
-            public void onSuccess(QuerySnapshot ds) {
-                if (ds != null && !ds.isEmpty()) {
+            public void onEvent(@javax.annotation.Nullable QuerySnapshot ds
+                    , @javax.annotation.Nullable FirebaseFirestoreException e) {
+                if (ds == null || ds.isEmpty())
+                    return;
 
-                    List<UserInfo> userInfos = ds.toObjects(UserInfo.class);
-                    for (UserInfo u : userInfos)
-                        if (u.getAvatarUri() != null)
+                List<UserInfo> userInfos = ds.toObjects(UserInfo.class);
+//                for (UserInfo u : userInfos)
+//                    if (u.getAvatarIconUri() != null) {
+//                        //Download avatarImageView
+//                        FirebaseStorage.getInstance().getReference().child(u.getAvatarUri())
+//                                .getBytes(Firebase.MAX_DONWLOAD_SIZE_BYTES)
+//                                .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+//                                    @Override
+//                                    public void onSuccess(byte[] bytes) {
+//                                        ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
+//                                        Bitmap b = BitmapFactory.decodeStream(arrayInputStream);
+//
+//                                        int index = resultList.indexOf(u);
+//
+//                                        u.setAvatarBitmap(b);
+//
+//                                        adapter.notifyItemChanged(index);
+//                                    }
+//                                });
+//                    }
+                resultList.clear();
+                resultList.addAll(userInfos);
 
-                            //Download avatar
-                            if (u.getAvatarUri() != null) {
-                                FirebaseStorage.getInstance().getReference().child(u.getAvatarUri()).getBytes(Firebase.MAX_DONWLOAD_SIZE_BYTES)
-                                        .addOnSuccessListener(new OnSuccessListener<byte[]>() {
-                                            @Override
-                                            public void onSuccess(byte[] bytes) {
-                                                ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(bytes);
-                                                Bitmap b = BitmapFactory.decodeStream(arrayInputStream);
+                peopleList.clear();
+                peopleList.addAll(userInfos);
 
-                                                int index = resultList.indexOf(u);
-                                                u.setAvatarBitmap(b);
-                                                adapter.notifyItemChanged(index);
-                                            }
-                                        });
-                            }
-                    resultList.clear();
-                    resultList.addAll(userInfos);
-                    peopleList.clear();
-                    peopleList.addAll(userInfos);
-                    adapter.notifyDataSetChanged();
-                }
+                adapter.notifyDataSetChanged();
             }
         });
-
 
 
         input.addTextChangedListener(new TextWatcher() {
@@ -122,11 +129,14 @@ public class SearchFragment extends SupportFragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String key = input.getText().toString().toLowerCase();
+
                 resultList.clear();
+
                 for (UserInfo u : peopleList)
                     if (u.getEmail().toLowerCase().contains(key)
                             || u.getUserName().toLowerCase().contains(key))
                         resultList.add(u);
+
                 adapter.notifyDataSetChanged();
             }
 
@@ -134,6 +144,7 @@ public class SearchFragment extends SupportFragment {
             public void afterTextChanged(Editable s) {
 
             }
+
         });
     }
 

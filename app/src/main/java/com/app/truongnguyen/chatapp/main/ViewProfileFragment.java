@@ -1,10 +1,9 @@
 package com.app.truongnguyen.chatapp.main;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,20 +15,20 @@ import android.widget.TextView;
 
 import com.app.truongnguyen.chatapp.R;
 import com.app.truongnguyen.chatapp.data.Firebase;
+import com.app.truongnguyen.chatapp.data.UserInfo;
 import com.app.truongnguyen.chatapp.fragmentnavigationcontroller.SupportFragment;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FieldValue;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+@SuppressLint("ValidFragment")
 public class ViewProfileFragment extends SupportFragment implements View.OnClickListener {
     @BindView(R.id.avatar)
-    RoundedImageView avatar;
+    RoundedImageView avatarImageView;
     @BindView(R.id.tv_user_name)
     TextView tvName;
     @BindView(R.id.btn_addfriend)
@@ -38,14 +37,12 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
     Button btnToChat;
 
     private Context mContext;
-    private String hisId;
-    private String hisName;
-    private Bitmap hisAvatarBitnap = null;
-
     private Firebase firebase = Firebase.getInstance();
+    private UserInfo hisInfo;
 
-    public static ViewProfileFragment newInstance() {
-        return new ViewProfileFragment();
+    public ViewProfileFragment(Context mContext, UserInfo hisInfo) {
+        this.mContext = mContext;
+        this.hisInfo = hisInfo;
     }
 
     @Nullable
@@ -59,26 +56,20 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            hisId = bundle.getString("id");
-            hisName = bundle.getString("hisName");
-
-            byte[] byteArray = bundle.getByteArray("hisAvatarBitmap");
-            if (byteArray != null)
-                hisAvatarBitnap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-        }
-
         mContext = getMainActivity();
 
-        setBtnAddFrienf(firebase.isFriend(hisId));
+        setBtnAddFrienf(firebase.isFriend(hisInfo.getId()));
         btnToChat.setOnClickListener(this);
         btnAddFrienf.setOnClickListener(this);
-        avatar.setOnClickListener(this);
+        avatarImageView.setOnClickListener(this);
 
-        if (hisAvatarBitnap != null)
-            avatar.setImageBitmap(hisAvatarBitnap);
-        tvName.setText(hisName);
+        tvName.setText(hisInfo.getUserName());
+        //set avatar
+        if (hisInfo.getAvatarIconUrl() != null) {
+            Glide.with(mContext).load(hisInfo.getAvatarIconUrl()).into(avatarImageView);
+            if (hisInfo.getAvatarUrl() != null)
+                Glide.with(mContext).load(hisInfo.getAvatarUrl()).into(avatarImageView);
+        }
     }
 
     @Override
@@ -88,27 +79,16 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
         switch (v.getId()) {
             case R.id.avatar:
                 Intent intent = new Intent(getMainActivity(), ViewImageActivity.class);
+
                 bundle = new Bundle();
+                bundle.putString("imageUrl", this.hisInfo.getAvatarUrl());
+                intent.putExtras(bundle);
 
-                Bitmap bitmap = hisAvatarBitnap;
-                if (bitmap != null) {
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-                    byte[] imageInByte = stream.toByteArray();
-                    ByteArrayInputStream bis = new ByteArrayInputStream(imageInByte);
-
-                    bundle.putByteArray("image", imageInByte);
-
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }
+                startActivity(intent);
                 break;
-            case R.id.btn_to_chat:
-                ChattingFragment chattingFragment = ChattingFragment.newInstance();
 
-                bundle = new Bundle();
-                bundle.putString("otherId", hisId);
-                chattingFragment.setArguments(bundle);
+            case R.id.btn_to_chat:
+                ChattingFragment chattingFragment = new ChattingFragment(mContext, hisInfo, null);
                 ((MainActivity) mContext).presentFragment(chattingFragment);
                 break;
             case R.id.btn_addfriend:
@@ -119,12 +99,12 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
                 progressDialog.setCanceledOnTouchOutside(true);
                 progressDialog.show();
 
-                if (!firebase.isFriend(hisId)) {
-                    firebase.getUserCurrentFolderDbs().update(listFriendFolder, FieldValue.arrayUnion(hisId))
+                if (!firebase.isFriend(hisInfo.getId())) {
+                    firebase.getCurrentUserFolderDbs().update(listFriendFolder, FieldValue.arrayUnion(hisInfo.getId()))
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    firebase.getUserFolderDbs().document(hisId)
+                                    firebase.getUserFolderDbs().document(hisInfo.getId())
                                             .update(listFriendFolder, FieldValue.arrayUnion(firebase.getUid()))
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
@@ -138,13 +118,13 @@ public class ViewProfileFragment extends SupportFragment implements View.OnClick
                             });
 
                 } else {
-                    firebase.getUserFolderDbs().document(hisId)
+                    firebase.getUserFolderDbs().document(hisInfo.getId())
                             .update(listFriendFolder, FieldValue.arrayRemove(firebase.getUid()))
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    firebase.getUserCurrentFolderDbs()
-                                            .update(listFriendFolder, FieldValue.arrayRemove(hisId))
+                                    firebase.getCurrentUserFolderDbs()
+                                            .update(listFriendFolder, FieldValue.arrayRemove(hisInfo.getId()))
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {

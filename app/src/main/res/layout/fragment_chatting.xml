@@ -42,21 +42,39 @@
             android:padding="4dp"
             android:src="@android:drawable/ic_menu_send" />
 
-
-        <hani.momanii.supernova_emoji_library.Helper.EmojiconEditText
-            android:id="@+id/input_mess"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_msg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/btn_send_mess"
             android:layout_toRightOf="@+id/emoji_button"
-            app:emojiconSize="28sp" />
+            android:layout_gravity="center|bottom"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            app:errorEnabled="true"
+            app:hintEnabled="false">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edit_text_msg"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_corner_without_border_dark"
+                android:drawablePadding="5dp"
+                android:hint="Type a message..."
+                android:inputType="text"
+                android:maxLines="10"
+                android:paddingStart="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+        </android.support.design.widget.TextInputLayout>
+
 
         <ListView
             android:id="@+id/list_of_message"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/input_mess"
+            android:layout_above="@+id/text_input_msg"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="5dp"
             android:divider="@android:color/transparent"
