@@ -2628,6 +2628,7 @@ drawable ic_person_add_blue_24dp
 drawable ic_phone
 drawable ic_remove_friend
 drawable ic_search
+drawable ic_send_black_24dp
 drawable ic_settings_black_24dp
 drawable ic_sex
 drawable ic_smiley
@@ -2861,6 +2862,7 @@ id input_search
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id khung_chat
 id labeled
 id largeLabel
 id last_message_content
