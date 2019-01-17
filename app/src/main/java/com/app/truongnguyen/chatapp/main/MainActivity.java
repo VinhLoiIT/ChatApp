@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
@@ -44,6 +43,7 @@ public class MainActivity extends BaseActivity {
         tabLayout.setupWithViewPager(pager);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(pager));
+        pager.setOffscreenPageLimit(adapter.getCount());
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_chat_black_24dp);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_contact_black_24dp);
@@ -108,8 +108,8 @@ public class MainActivity extends BaseActivity {
 
     public void restartHomeScreen() {
         Intent intent = new Intent(this, MainActivity.class);
-        finish();
         startActivity(intent);
+        finish();
         addControl();
 
     }
